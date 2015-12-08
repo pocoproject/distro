@@ -1,6 +1,3 @@
-# distro
-Poco distribution for various platforms
-
 POCO C++ Distribution
 =====================
 
