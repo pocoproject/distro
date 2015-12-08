@@ -1,0 +1,27 @@
+Description: Disables use of RPATH on Debian architectures.
+Origin: vendor
+Forwarded: not-needed
+Author: Krzysztof Burghardt <krzysztof@burghardt.pl>
+
+--- a/build/config/FreeBSD
++++ b/build/config/FreeBSD
+@@ -52,7 +52,7 @@
+ STATICOPT_LINK  = -static
+ SHAREDOPT_CC    = -fPIC
+ SHAREDOPT_CXX   = -fPIC
+-SHAREDOPT_LINK  = -Wl,-rpath,$(LIBPATH)
++SHAREDOPT_LINK  =
+ DEBUGOPT_CC     = -g -D_DEBUG
+ DEBUGOPT_CXX    = -g -D_DEBUG
+ DEBUGOPT_LINK   = -g
+--- a/build/config/Linux
++++ b/build/config/Linux
+@@ -52,7 +52,7 @@
+ STATICOPT_LINK  = -static
+ SHAREDOPT_CC    = -fPIC
+ SHAREDOPT_CXX   = -fPIC
+-SHAREDOPT_LINK  = -Wl,-rpath,$(LIBPATH)
++SHAREDOPT_LINK  =
+ DEBUGOPT_CC     = -g -D_DEBUG
+ DEBUGOPT_CXX    = -g -D_DEBUG
+ DEBUGOPT_LINK   = -g

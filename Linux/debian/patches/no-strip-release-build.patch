@@ -1,0 +1,33 @@
+Description: Do not strip libraries built in release mode.
+Origin: vendor
+Forwarded: not-needed
+Author: Cristian Greco <cristian@debian.org>
+
+--- a/build/rules/exec
++++ b/build/rules/exec
+@@ -47,7 +47,6 @@
+ $(EXEC_RELEASE_STATIC): $(foreach o,$(objects),$(OBJPATH_RELEASE_STATIC)/$(o).o)
+ 	@echo "** Building executable (release)" $@
+ 	$(LINK) $(LINKFLAGS) $(RELEASEOPT_LINK) $(STATICOPT_LINK) -o $@ $^ $(LIBRARY) $(TARGET_LIBS_RELEASE) $(SYSLIBS)
+-	$(STRIPCMD)
+ 	$(postbuild)
+ 
+ $(EXEC_DEBUG_SHARED): $(foreach o,$(objects),$(OBJPATH_DEBUG_SHARED)/$(o).o)
+@@ -58,7 +57,6 @@
+ $(EXEC_RELEASE_SHARED): $(foreach o,$(objects),$(OBJPATH_RELEASE_SHARED)/$(o).o)
+ 	@echo "** Building shared executable (release)" $@
+ 	$(LINK) $(LINKFLAGS) $(RELEASEOPT_LINK) $(SHAREDOPT_LINK) -o $@ $^ $(LIBRARY) $(TARGET_LIBS_RELEASE) $(SYSLIBS)
+-	$(STRIPCMD)
+ 	$(postbuild)
+ 
+ #
+--- a/build/rules/lib
++++ b/build/rules/lib
+@@ -73,7 +73,6 @@
+ 	@echo "** Building shared library (release)" $@
+ 	$(SHLIB) $(SHLIBFLAGS) $^ $(LIBRARY) $(TARGET_LIBS_RELEASE) $(SYSLIBS)
+ 	$(SHLIBLN) $(LIB_RELEASE_SHARED) $(LIB_RELEASE_SHARED_LINK)
+-	$(STRIPCMD)
+ 	$(postbuild)
+ 
+ #
