@@ -4,35 +4,43 @@ Origin: vendor
 Forwarded: http://sourceforge.net/tracker/?func=detail&aid=3470774&group_id=132964&atid=725711
 Author: Cristian Greco <cristian@debian.org>
 
+diff --git a/build/config/Linux b/build/config/Linux
+index 9d1c097..517e79d 100644
 --- a/build/config/Linux
 +++ b/build/config/Linux
 @@ -20,7 +20,7 @@
  LINK    = $(CXX)
- LIB     = ar -cr
- RANLIB  = ranlib
+ LIB     = ${CROSS_COMPILE}ar -cr
+ RANLIB  = ${CROSS_COMPILE}ranlib
 -SHLIB   = $(CXX) -shared -Wl,-soname,$(notdir $@) -o $@
-+SHLIB   = $(CXX) -shared -Wl,-soname,$(notdir $@) $(LDFLAGS) -o $@
++SHLIB   = $(CXX) -shared -Wl,-soname,$(notdir $@) $(LDFLAGS) -o $@ 
  SHLIBLN = $(POCO_BASE)/build/script/shlibln
- STRIP   = strip
+ STRIP   = ${CROSS_COMPILE}strip
  DEP     = $(POCO_BASE)/build/script/makedepend.gcc 
-@@ -38,13 +38,13 @@
+@@ -38,12 +38,15 @@
  #
  # Compiler and Linker Flags
  #
 -CFLAGS          = 
-+CFLAGS         +=
++CFLAGS          += 
  CFLAGS32        =
  CFLAGS64        =
 -CXXFLAGS        = -Wall -Wno-sign-compare
-+CXXFLAGS       += -Wall -Wno-sign-compare
++CXXFLAGS        += -Wall -Wno-sign-compare $(CPPFLAGS)
  CXXFLAGS32      =
  CXXFLAGS64      =
--LINKFLAGS       =
-+LINKFLAGS       = $(LDFLAGS)
++SHLIBFLAGS      =
++SHLIBFLAGS32    =
++SHLIBFLAGS64    =
+ LINKFLAGS       =
  LINKFLAGS32     =
  LINKFLAGS64     =
- STATICOPT_CC    =
-@@ -56,14 +56,14 @@
+@@ -52,13 +55,13 @@
+ STATICOPT_LINK  = -static
+ SHAREDOPT_CC    = -fPIC
+ SHAREDOPT_CXX   = -fPIC
+-SHAREDOPT_LINK  = -Wl,-rpath,$(LIBPATH)
++SHAREDOPT_LINK  =
  DEBUGOPT_CC     = -g -D_DEBUG
  DEBUGOPT_CXX    = -g -D_DEBUG
  DEBUGOPT_LINK   = -g
@@ -41,60 +49,7 @@ Author: Cristian Greco <cristian@debian.org>
 -RELEASEOPT_LINK = -O2
 +RELEASEOPT_CC   = -DNDEBUG
 +RELEASEOPT_CXX  = -DNDEBUG
-+RELEASEOPT_LINK =
++RELEASEOPT_LINK = 
  
  #
  # System Specific Flags
- #
--SYSFLAGS = -D_XOPEN_SOURCE=500 -D_REENTRANT -D_THREAD_SAFE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DPOCO_HAVE_FD_EPOLL
-+SYSFLAGS = -D_XOPEN_SOURCE=500 -D_REENTRANT -D_THREAD_SAFE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DPOCO_HAVE_FD_EPOLL $(CPPFLAGS)
- 
- #
- # System Specific Libraries
---- a/build/config/FreeBSD
-+++ b/build/config/FreeBSD
-@@ -20,7 +20,7 @@
- LINK    = $(CXX)
- LIB     = ar -cr
- RANLIB  = ranlib
--SHLIB   = $(CXX) -shared -Wl,-soname,$(notdir $@) -o $@
-+SHLIB   = $(CXX) -shared -Wl,-soname,$(notdir $@) $(LDFLAGS) -o $@
- SHLIBLN = $(POCO_BASE)/build/script/shlibln
- DEP     = $(POCO_BASE)/build/script/makedepend.gcc 
- STRIP   = strip
-@@ -38,13 +38,13 @@
- #
- # Compiler and Linker Flags
- #
--CFLAGS          = 
-+CFLAGS         +=
- CFLAGS32        =
- CFLAGS64        =
--CXXFLAGS        =
-+CXXFLAGS       +=
- CXXFLAGS32      =
- CXXFLAGS64      =
--LINKFLAGS       =
-+LINKFLAGS       = $(LDFLAGS)
- LINKFLAGS32     =
- LINKFLAGS64     =
- STATICOPT_CC    =
-@@ -56,14 +56,14 @@
- DEBUGOPT_CC     = -g -D_DEBUG
- DEBUGOPT_CXX    = -g -D_DEBUG
- DEBUGOPT_LINK   = -g
--RELEASEOPT_CC   = -O2 -DNDEBUG
--RELEASEOPT_CXX  = -O2 -DNDEBUG
--RELEASEOPT_LINK = -O2
-+RELEASEOPT_CC   = -DNDEBUG
-+RELEASEOPT_CXX  = -DNDEBUG
-+RELEASEOPT_LINK =
- 
- #
- # System Specific Flags
- #
--SYSFLAGS = -D_REENTRANT -D_THREAD_SAFE 
-+SYSFLAGS = -D_REENTRANT -D_THREAD_SAFE $(CPPFLAGS)
- 
- #
- # System Specific Libraries
