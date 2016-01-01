@@ -1,5 +1,4 @@
 # patches for build/config/*
-disable-rpath.patch
 honor-buildflags.patch
 no-link-dl-rt.patch  #could be removed now
 
