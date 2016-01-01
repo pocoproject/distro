@@ -26,6 +26,7 @@ URL:              http://www.pocoproject.org
 #Source1:          http://downloads.sourceforge.net/poco/poco-%{poco_doc_version}-all-doc.tar.gz
 #Source0:           https://github.com/pocoproject/%{name}/archive/%{gittag0}.tar.gz#/%{name}-%{version}.tar.gz
 Source0:           file://localhost/home/fandre/poco/releases/%{name}-%{version}-all.tar.gz
+Source1:           file://localhost/home/fandre/poco/releases/%{name}-%{version}-all-doc.tar.gz
 
 BuildRequires:    openssl-devel
 BuildRequires:    libiodbc-devel
@@ -35,7 +36,8 @@ BuildRequires:    pcre-devel
 BuildRequires:    sqlite-devel
 BuildRequires:    expat-devel
 BuildRequires:    mongodb-devel
-BuildRequires:    libtool
+BuildRequires:    libtool-ltdl-devel
+BuildRequires:    libtool-ltdl
 
 %description
 The POCO C++ Libraries (POCO stands for POrtable COmponents) 
@@ -46,8 +48,11 @@ including the standard library.
 
 %prep
 #%setup -qn %{name}-%{gittag0}
-%setup -qn %{name}-%{version}-all
-#/bin/chmod -R a-x+X poco-%{poco_doc_version}-all-doc
+#%setup -T -b 0 -qn %{name}-%{version}-all
+#%setup -T -b 1 -qn %{name}-%{version}-all-doc
+%setup -q -n %{name}-%{version}-all -a1
+/bin/chmod -R a-x+X %{name}-%{version}-all-doc
+
 /bin/sed -i.orig -e 's|$(INSTALLDIR)/lib\b|$(INSTALLDIR)/%{_lib}|g' Makefile
 /bin/sed -i.orig -e 's|ODBCLIBDIR /usr/lib\b|ODBCLIBDIR = %{_libdir}|g' Data/ODBC/Makefile Data/ODBC/testsuite/Makefile
 /bin/sed -i.orig -e 's|flags=""|flags="%{optflags}"|g' configure
@@ -349,23 +354,23 @@ POCO applications.
 %{_libdir}/libPocoZip.so
 %{_libdir}/libPocoZipd.so
 
-#%package          doc
-#Summary:          The POCO API reference documentation
-#Group:            Documentation
+%package          doc
+Summary:          The POCO API reference documentation
+Group:            Documentation
 
-#%description doc
-#The POCO C++ Libraries (POCO stands for POrtable COmponents) 
-#are open source C++ class libraries that simplify and accelerate the 
-#development of network-centric, portable applications in C++. The 
-#POCO C++ Libraries are built strictly on standard ANSI/ISO C++, 
-#including the standard library.
+%description doc
+The POCO C++ Libraries (POCO stands for POrtable COmponents) 
+are open source C++ class libraries that simplify and accelerate the 
+development of network-centric, portable applications in C++. The 
+POCO C++ Libraries are built strictly on standard ANSI/ISO C++, 
+including the standard library.
 
-#This is the complete POCO class library reference documentation in 
-#HTML format.
+This is the complete POCO class library reference documentation in 
+HTML format.
 
-#%files doc
-#%defattr(-, root, root, -)
-#%doc poco-%{poco_doc_version}-all-doc/*
+%files doc
+%defattr(-, root, root, -)
+%doc %{name}-%{version}-all-doc/*
 
 %changelog
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.2p1-2.10
