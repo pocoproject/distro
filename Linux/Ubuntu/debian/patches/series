@@ -9,5 +9,4 @@ no-strip-release-build.patch
 fix-odbc-makefile.patch
 
 # patches for source code files
-fix-kfreebsd-ftbfs.patch
 fix-mipsel-endianness.patch
