@@ -7,6 +7,3 @@ no-strip-release-build.patch
 
 # patches for other makefiles
 fix-odbc-makefile.patch
-
-# patches for source code files
-fix-mipsel-endianness.patch
