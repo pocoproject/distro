@@ -3,15 +3,16 @@ Origin: vendor
 Forwarded: not-needed
 Author: Cristian Greco <cristian@debian.org>
 
+diff --git a/Data/ODBC/ODBC.make b/Data/ODBC/ODBC.make
+index 81805da..1c3a5a2 100644
 --- a/Data/ODBC/ODBC.make
 +++ b/Data/ODBC/ODBC.make
-@@ -10,6 +10,9 @@
- ODBCINCDIR = /usr/include
+@@ -17,6 +17,8 @@
+ POCO_ODBC_LIB = /usr/lib64
+ else 
+ POCO_ODBC_LIB = /usr/lib
++MULTIARCH_TUPLE = $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
++POCO_ODBC_LIB = /usr/lib/$(MULTIARCH_TUPLE)
+ endif
  endif
  
-+MULTIARCH_TUPLE = $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
-+ODBCLIBDIR = /usr/lib/$(MULTIARCH_TUPLE)
-+
- ifndef ODBCLIBDIR
- ifeq (0, $(shell test -d /usr/lib/$(OSARCH)-linux-gnu; echo $$?))
- ODBCLIBDIR = /usr/lib/$(OSARCH)-linux-gnu
