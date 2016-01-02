@@ -1,5 +1,15 @@
 version=3
 #http://sf.net/poco/poco-(.*)-all\.tar\.bz2
 #https://github.com/pocoproject/poco/archive/poco-1\.6\.1-release\.tar\.gz
-opts="filenamemangle=s/(?:.*)?v?(\d[\d\.]*)\.tar\.gz/poco-$1.tar.gz/" \
-	https://github.com/pocoproject/poco/tags (?:.*/)?v?(\d[\d\.]*)\.tar\.gz
+#opts="filenamemangle=s/(?:.*)?v?(\d[\d\.]*)\.tar\.gz/poco-$1.tar.gz/" \
+#	https://github.com/pocoproject/poco/releases/tag (?:.*/)?v?(\d[\d\.]*)\.tar\.gz
+
+opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/poco-$1\.tar\.gz/ \
+  https://github.com/pocoproject/poco/tags .*/v?(\d\S*)\.tar\.gz	
+
+#https://github.com/pocoproject/poco/archive/poco-1.6.1-release.tar.gz
+#href="/pocoproject/poco/releases/tag/poco-1.6.1-release
+#href="/pocoproject/poco/releases/tag/poco-1.6.1-release
+
+https://github.com/pocoproject/poco/archive/poco-1.6.1-release.tar.gz
+https://github.com/pocoproject/poco/archive/poco-1.6.1-release.tar.gz
