@@ -8,8 +8,7 @@ DPKG_EXPORT_BUILDFLAGS = 1
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 include /usr/share/dpkg/buildflags.mk
 
-CONFFLAGS = --prefix=/usr --no-samples --no-tests --unbundled
-CONFFLAGS_TESTS = $(filter-out --no-tests, $(CONFFLAGS))
+CONFFLAGS = --prefix=/usr samples tests --unbundled
 
 # Disable parallel build on armel and mipsel
 ifeq ($(or $(findstring armel, $(DEB_HOST_ARCH)), $(findstring mipsel, $(DEB_HOST_ARCH))), )
@@ -26,24 +25,16 @@ POCO_LIBS = $(shell dh_listpackages | grep dbg | sed -e 's/-dbg//')
 
 
 %:
-	dh $@ --with quilt $(EXTRA_DH_OPTS)
+	dh $@ $(EXTRA_DH_OPTS)
 
 override_dh_auto_configure:
-	./configure $(CONFFLAGS_TESTS)
-	# save config file with tests enabled for later use
-	mv config.make config.make.tests
 	./configure $(CONFFLAGS)
 
 override_dh_auto_build:
 	dh_auto_build
-	# build tests with hardening flags disabled
-	mv config.make.tests config.make
-	dh_auto_build -- CFLAGS= CPPFLAGS= CXXFLAGS= LDFLAGS=
 
 override_dh_auto_test:
-	echo :q
-	:ll
-	./debian/testrunner.sh
+	echo ./debian/testrunner.sh
 
 override_dh_strip-%:
 	dh_strip -p$* --dbg-package=$*-dbg
