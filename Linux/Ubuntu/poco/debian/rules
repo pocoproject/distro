@@ -30,9 +30,6 @@ POCO_LIBS = $(shell dh_listpackages | grep dbg | sed -e 's/-dbg//')
 override_dh_auto_configure:
 	./configure $(CONFFLAGS)
 
-override_dh_auto_build:
-	dh_auto_build
-
 override_dh_auto_test:
 	echo ./debian/testrunner.sh
 
