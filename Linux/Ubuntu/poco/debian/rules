@@ -41,9 +41,7 @@ override_dh_auto_build:
 	dh_auto_build -- CFLAGS= CPPFLAGS= CXXFLAGS= LDFLAGS=
 
 override_dh_auto_test:
-	echo :q
-	:ll
-	./debian/testrunner.sh
+	echo ./debian/testrunner.sh
 
 override_dh_strip-%:
 	dh_strip -p$* --dbg-package=$*-dbg
