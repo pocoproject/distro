@@ -2,6 +2,7 @@
 
 export LC_ALL=C
 export MAKEFLAGS=-s
+export DH_VERBOSE=1
 
 DPKG_EXPORT_BUILDFLAGS = 1
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
