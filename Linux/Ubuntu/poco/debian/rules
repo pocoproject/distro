@@ -25,13 +25,13 @@ POCO_LIBS = $(shell dh_listpackages | grep dbg | sed -e 's/-dbg//')
 
 
 %:
-	dh $@ $(EXTRA_DH_OPTS)
+	dh $@ --with=quilt $(EXTRA_DH_OPTS)
 
 override_dh_auto_configure:
 	./configure $(CONFFLAGS)
 
 override_dh_auto_test:
-	echo ./debian/testrunner.sh
+	./debian/testrunner.sh
 
 override_dh_strip-%:
 	dh_strip -p$* --dbg-package=$*-dbg
