@@ -10,7 +10,7 @@ Build-Depends: debhelper (>= 8.0.0),
                libsqlite3-dev (>= 3.6.13),
                libssl-dev (>= 0.9.8),
                unixodbc-dev,
-               zlib1g-dev
+               zlib1g-dev,
                quilt
 Standards-Version: 3.9.2
 Section: libs
@@ -21,8 +21,8 @@ Vcs-Git: git://git.debian.org/git/collab-maint/poco.git
 Package: libpoco-dev
 Section: libdevel
 Architecture: any
-Depends: ${misc:Depends}, libpococrypto40 (= ${binary:Version}), libpocodata40 (= ${binary:Version}), libpocofoundation40 (= ${binary:Version}), libpocodatamysql40 (= ${binary:Version}), libpoconet40 (= ${binary:Version}), libpoconetssl40 (= ${binary:Version}), libpocodataodbc40 (= ${binary:Version}), libpocodatasqlite40 (= ${binary:Version}), libpocoutil40 (= ${binary:Version}), libpocoxml40 (= ${binary:Version}), libpocozip40 (= ${binary:Version})
-Suggests: libpoco-doc, libpococrypto40-dbg (= ${binary:Version}), libpocodata40-dbg (= ${binary:Version}), libpocofoundation40-dbg (= ${binary:Version}), libpocodatamysql40-dbg (= ${binary:Version}), libpoconet40-dbg (= ${binary:Version}), libpoconetssl40-dbg (= ${binary:Version}), libpocodataodbc40-dbg (= ${binary:Version}), libpocodatasqlite40-dbg (= ${binary:Version}), libpocoutil40-dbg (= ${binary:Version}), libpocoxml40-dbg (= ${binary:Version}), libpocozip40-dbg (= ${binary:Version})
+Depends: ${misc:Depends}, libpococrypto40 (= ${binary:Version}), libpocodata40 (= ${binary:Version}), libpocofoundation40 (= ${binary:Version}), libpocodatamysql40 (= ${binary:Version}), libpoconet40 (= ${binary:Version}), libpoconetssl40 (= ${binary:Version}), libpocodataodbc40 (= ${binary:Version}), libpocodatasqlite40 (= ${binary:Version}), libpocojson40 (= ${binary:Version}), libpocoxml40 (= ${binary:Version}), libpocoutil40 (= ${binary:Version}),  libpocozip40 (= ${binary:Version})
+Suggests: libpoco-doc, libpococrypto40-dbg (= ${binary:Version}), libpocodata40-dbg (= ${binary:Version}), libpocofoundation40-dbg (= ${binary:Version}), libpocodatamysql40-dbg (= ${binary:Version}), libpoconet40-dbg (= ${binary:Version}), libpoconetssl40-dbg (= ${binary:Version}), libpocodataodbc40-dbg (= ${binary:Version}), libpocodatasqlite40-dbg (= ${binary:Version}), libpocoJSON40-dbg (= ${binary:Version}), libpocoxml40-dbg (= ${binary:Version}), libpocoutil40-dbg (= ${binary:Version}), libpocozip40-dbg (= ${binary:Version})
 Provides: libpoco5-dev
 Conflicts: libpoco5-dev
 Replaces: libpoco5-dev
@@ -335,7 +335,7 @@ Description: C++ Portable Components (POCO) Util library (debug version)
 
 Package: libpocoutil40
 Architecture: any
-Depends: libpocofoundation40 (= ${binary:Version}), libpocoxml40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation40 (= ${binary:Version}), libpocojson40 (= ${binary:Version}), libpocoxml40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Util library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -382,6 +382,40 @@ Description: C++ Portable Components (POCO) XML library
  consistent and easy to maintain.
  .
  This package provides the POCO XML library.
+
+Package: libpocojson40-dbg
+Priority: extra
+Section: debug
+Architecture: any
+Depends: libpocojson40 (= ${binary:Version}), ${misc:Depends}
+Description: C++ Portable Components (POCO) XML library (debug version)
+ The POCO C++ Libraries are a collection of open source C++ class libraries
+ that simplify and accelerate the development of network-centric, portable
+ applications in C++. The libraries integrate perfectly with the C++ Standard
+ Library and fill many of the functional gaps left open by it.
+ .
+ POCO is built strictly using standard ANSI/ISO C++, including the standard
+ library. The contributors attempt to find a good balance between using advanced
+ C++ features and keeping the classes comprehensible and the code clean,
+ consistent and easy to maintain.
+ .
+ This package provides the debug version of POCO JSON library.
+
+Package: libpocojson40
+Architecture: any
+Depends: libpocofoundation40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: C++ Portable Components (POCO) XML library
+ The POCO C++ Libraries are a collection of open source C++ class libraries
+ that simplify and accelerate the development of network-centric, portable
+ applications in C++. The libraries integrate perfectly with the C++ Standard
+ Library and fill many of the functional gaps left open by it.
+ .
+ POCO is built strictly using standard ANSI/ISO C++, including the standard
+ library. The contributors attempt to find a good balance between using advanced
+ C++ features and keeping the classes comprehensible and the code clean,
+ consistent and easy to maintain.
+ .
+ This package provides the POCO JSON library.
 
 Package: libpocozip40-dbg
 Priority: extra
