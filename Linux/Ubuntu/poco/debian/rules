@@ -8,7 +8,7 @@ DPKG_EXPORT_BUILDFLAGS = 1
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 include /usr/share/dpkg/buildflags.mk
 
-CONFFLAGS = --prefix=/usr samples tests --unbundled
+CONFFLAGS = --prefix=/usr --unbundled
 
 # Disable parallel build on armel and mipsel
 ifeq ($(or $(findstring armel, $(DEB_HOST_ARCH)), $(findstring mipsel, $(DEB_HOST_ARCH))), )
@@ -29,7 +29,7 @@ POCO_LIBS = $(shell dh_listpackages | grep dbg | sed -e 's/-dbg//')
 
 override_dh_auto_configure:
 	./configure $(CONFFLAGS)
-
+	
 override_dh_auto_test:
 	./debian/testrunner.sh
 

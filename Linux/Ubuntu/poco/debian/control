@@ -11,6 +11,7 @@ Build-Depends: debhelper (>= 8.0.0),
                libssl-dev (>= 0.9.8),
                unixodbc-dev,
                zlib1g-dev
+               quilt
 Standards-Version: 3.9.2
 Section: libs
 Homepage: http://pocoproject.org/
