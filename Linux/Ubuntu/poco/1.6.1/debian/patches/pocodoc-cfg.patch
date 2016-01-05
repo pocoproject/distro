@@ -1,0 +1,18 @@
+Description: Let the build system honor flags obtained through dpkg-buildflags.
+ Try to append flags where possible. Also remove the -Ox flags set by upstream.
+Origin: vendor
+Forwarded: not-needed
+Author: Francis ANDRE <zosrothko@orange.fr>
+
+diff --git a/PocoDoc/cfg/mkdoc-poco.xml b/PocoDoc/cfg/mkdoc-poco.xml
+index c9c7df9..3ae5021 100644
+--- a/PocoDoc/cfg/mkdoc-poco.xml
++++ b/PocoDoc/cfg/mkdoc-poco.xml
+@@ -32,6 +32,7 @@
+ 			<options>
+ 				${Includes},
+ 				-I/usr/local/mysql/include,
++				-I/usr/include/mysql,
+ 				-D_DEBUG,
+ 				-E,
+ 				-C,
