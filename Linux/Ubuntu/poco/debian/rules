@@ -31,6 +31,7 @@ override_dh_auto_configure:
 	./configure $(CONFFLAGS)
 	
 override_dh_auto_test:
+	chmod 755 ./debian/testrunner.sh
 	./debian/testrunner.sh
 
 override_dh_strip-%:
