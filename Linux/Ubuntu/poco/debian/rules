@@ -1,7 +1,6 @@
 #!/usr/bin/make -f
 
 export LC_ALL=C
-export MAKEFLAGS=-s
 export DH_VERBOSE=1
 
 DPKG_EXPORT_BUILDFLAGS = 1
@@ -31,7 +30,11 @@ override_dh_auto_clean:
 	dh_auto_clean
 	
 override_dh_auto_configure:
+	env | sort
 	./configure $(CONFFLAGS)
+	
+override_dh_auto_build
+	dh_auto_build -- MAKEFLAGS=-s STRIP= 
 	
 override_dh_auto_test:
 	chmod 755 ./debian/testrunner.sh

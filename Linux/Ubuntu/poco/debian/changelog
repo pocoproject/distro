@@ -1,3 +1,29 @@
+poco (1.6.1-5) experimental; urgency=low
+
+  * remove patches/no-strip-release-build
+  * add rules/override_auto_build and pass MAKEFLAGS=-s STRIP=
+  * add foundation-pathtest.patch  
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-4) experimental; urgency=low
+
+  * New Upstream version 1.6.1
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-3) experimental; urgency=low
+
+  * New Upstream version 1.6.1
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-3) experimental; urgency=low
+
+  * New Upstream version 1.6.1
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
 poco (1.6.1-1) experimental; urgency=low
 
   * New Upstream version 1.6.1
