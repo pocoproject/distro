@@ -28,7 +28,6 @@ POCO_LIBS = $(shell dh_listpackages | grep dbg | sed -e 's/-dbg//')
 	dh $@ --with=quilt $(EXTRA_DH_OPTS)
 
 override_dh_auto_clean:
-	export POCO_BASE=`pwd`
 	dh_auto_clean
 	
 override_dh_auto_configure:
@@ -41,5 +40,11 @@ override_dh_auto_test:
 override_dh_strip-%:
 	dh_strip -p$* --dbg-package=$*-dbg
 
-override_dh_strip: 
-	$(POCO_LIBS:%=override_dh_strip-%)
+#override_dh_strip: 
+#	$(POCO_LIBS:%=override_dh_strip-%)
+
+#   debian/rules override_dh_strip
+#make[1]: override_dh_strip-libpococrypto40: Command not found
+#make[1]: *** [override_dh_strip] Error 127
+#make: *** [binary-arch] Error 2
+
