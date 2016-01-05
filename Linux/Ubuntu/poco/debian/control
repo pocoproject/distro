@@ -1,7 +1,7 @@
 Source: poco
 Priority: optional
 Maintainer: Krzysztof Burghardt <krzysztof@burghardt.pl>
-Uploaders: Patrick Gansterer <paroga@paroga.com>, Cristian Greco <cristian@debian.org>
+Uploaders: Patrick Gansterer <paroga@paroga.com>, Cristian Greco <cristian@debian.org>, Francis ANDRE <zosrothko@orange.fr>
 Build-Depends: debhelper (>= 8.0.0),
                dpkg-dev (>= 1.16.1~),
                libexpat1-dev,

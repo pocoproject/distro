@@ -30,7 +30,7 @@ override_dh_auto_clean:
 	dh_auto_clean
 	
 override_dh_auto_configure:
-	ls -la $HOME
+	ls -la ${HOME}
 	env | sort
 	./configure $(CONFFLAGS)
 	
@@ -38,7 +38,6 @@ override_dh_auto_build:
 	dh_auto_build -- MAKEFLAGS=-s STRIP= 
 	
 override_dh_auto_test:
-	chmod 755 ./debian/testrunner.sh
 	./debian/testrunner.sh
 
 override_dh_strip-%:
