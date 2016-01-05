@@ -1,0 +1,16 @@
+Description: Include <pcre.h> when building Poco in unbundled mode.
+Origin: vendor
+Forwarded: not-needed
+Author: Francis ANDRE <zosrothko@orange.fr>
+
+--- a/Makefile
++++ b/Makefile
+@@ -20,6 +20,8 @@
+ export POCO_BUILD=$(POCO_BASE)
+ endif
+ 
++LIBPREFIX	?= lib
++
+ .PHONY: poco all libexecs cppunit tests samples cleans clean distclean install
+ 
+ # TESTS and SAMPLES are set in config.make

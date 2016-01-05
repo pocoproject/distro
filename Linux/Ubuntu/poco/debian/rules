@@ -27,6 +27,10 @@ POCO_LIBS = $(shell dh_listpackages | grep dbg | sed -e 's/-dbg//')
 %:
 	dh $@ --with=quilt $(EXTRA_DH_OPTS)
 
+override_dh_auto_clean:
+	source env.sh
+	dh_auto_clean
+	
 override_dh_auto_configure:
 	./configure $(CONFFLAGS)
 	
@@ -37,4 +41,5 @@ override_dh_auto_test:
 override_dh_strip-%:
 	dh_strip -p$* --dbg-package=$*-dbg
 
-override_dh_strip: $(POCO_LIBS:%=override_dh_strip-%)
+override_dh_strip: 
+	$(POCO_LIBS:%=override_dh_strip-%)

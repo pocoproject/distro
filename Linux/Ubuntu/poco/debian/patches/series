@@ -7,4 +7,7 @@ no-strip-release-build.patch
 
 # patches for other makefiles
 fix-odbc-makefile.patch
+poco-makefile.patch
+
+# patches for unbundling
 unbundled-pcre.patch
