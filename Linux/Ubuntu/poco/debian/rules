@@ -28,7 +28,7 @@ POCO_LIBS = $(shell dh_listpackages | grep dbg | sed -e 's/-dbg//')
 	dh $@ --with=quilt $(EXTRA_DH_OPTS)
 
 override_dh_auto_clean:
-	source env.sh
+	export POCO_BASE=`pwd`
 	dh_auto_clean
 	
 override_dh_auto_configure:
