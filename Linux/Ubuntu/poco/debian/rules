@@ -33,7 +33,7 @@ override_dh_auto_configure:
 	env | sort
 	./configure $(CONFFLAGS)
 	
-override_dh_auto_build
+override_dh_auto_build:
 	dh_auto_build -- MAKEFLAGS=-s STRIP= 
 	
 override_dh_auto_test:
