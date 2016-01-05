@@ -1,3 +1,9 @@
+poco (1.6.1-7) experimental; urgency=low
+
+  * Fix ls -la ${HOME}
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
 poco (1.6.1-6) experimental; urgency=low
 
   * change suffix from 40 to 31 to align with libversion libPoco*.so.31
