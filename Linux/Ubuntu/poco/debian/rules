@@ -43,11 +43,5 @@ override_dh_auto_test:
 override_dh_strip-%:
 	dh_strip -p$* --dbg-package=$*-dbg
 
-#override_dh_strip: 
-#	$(POCO_LIBS:%=override_dh_strip-%)
-
-#   debian/rules override_dh_strip
-#make[1]: override_dh_strip-libpococrypto40: Command not found
-#make[1]: *** [override_dh_strip] Error 127
-#make: *** [binary-arch] Error 2
+#override_dh_strip:	$(POCO_LIBS:%=override_dh_strip-%)
 

@@ -21,8 +21,8 @@ Vcs-Git: git://git.debian.org/git/collab-maint/poco.git
 Package: libpoco-dev
 Section: libdevel
 Architecture: any
-Depends: ${misc:Depends}, libpococrypto40 (= ${binary:Version}), libpocodata40 (= ${binary:Version}), libpocofoundation40 (= ${binary:Version}), libpocodatamysql40 (= ${binary:Version}), libpoconet40 (= ${binary:Version}), libpoconetssl40 (= ${binary:Version}), libpocodataodbc40 (= ${binary:Version}), libpocodatasqlite40 (= ${binary:Version}), libpocojson40 (= ${binary:Version}), libpocoxml40 (= ${binary:Version}), libpocoutil40 (= ${binary:Version}),  libpocozip40 (= ${binary:Version})
-Suggests: libpoco-doc, libpococrypto40-dbg (= ${binary:Version}), libpocodata40-dbg (= ${binary:Version}), libpocofoundation40-dbg (= ${binary:Version}), libpocodatamysql40-dbg (= ${binary:Version}), libpoconet40-dbg (= ${binary:Version}), libpoconetssl40-dbg (= ${binary:Version}), libpocodataodbc40-dbg (= ${binary:Version}), libpocodatasqlite40-dbg (= ${binary:Version}), libpocoJSON40-dbg (= ${binary:Version}), libpocoxml40-dbg (= ${binary:Version}), libpocoutil40-dbg (= ${binary:Version}), libpocozip40-dbg (= ${binary:Version})
+Depends: ${misc:Depends}, libpococrypto31 (= ${binary:Version}), libpocodata31 (= ${binary:Version}), libpocofoundation31 (= ${binary:Version}), libpocodatamysql31 (= ${binary:Version}), libpoconet31 (= ${binary:Version}), libpoconetssl31 (= ${binary:Version}), libpocodataodbc31 (= ${binary:Version}), libpocodatasqlite31 (= ${binary:Version}), libpocojson31 (= ${binary:Version}), libpocoxml31 (= ${binary:Version}), libpocoutil31 (= ${binary:Version}),  libpocozip31 (= ${binary:Version})
+Suggests: libpoco-doc, libpococrypto31-dbg (= ${binary:Version}), libpocodata31-dbg (= ${binary:Version}), libpocofoundation31-dbg (= ${binary:Version}), libpocodatamysql31-dbg (= ${binary:Version}), libpoconet31-dbg (= ${binary:Version}), libpoconetssl31-dbg (= ${binary:Version}), libpocodataodbc31-dbg (= ${binary:Version}), libpocodatasqlite31-dbg (= ${binary:Version}), libpocoJSON31-dbg (= ${binary:Version}), libpocoxml31-dbg (= ${binary:Version}), libpocoutil31-dbg (= ${binary:Version}), libpocozip31-dbg (= ${binary:Version})
 Provides: libpoco5-dev
 Conflicts: libpoco5-dev
 Replaces: libpoco5-dev
@@ -42,11 +42,11 @@ Description: C++ Portable Components (POCO) Development files
  are NetSSL, providing SSL support for the network classes in the Net library,
  and Data, a library for uniformly accessing different SQL databases.
 
-Package: libpococrypto40-dbg
+Package: libpococrypto31-dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpococrypto40 (= ${binary:Version}), ${misc:Depends}
+Depends: libpococrypto31 (= ${binary:Version}), ${misc:Depends}
 Description: C++ Portable Components (POCO) Crypto library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -60,9 +60,9 @@ Description: C++ Portable Components (POCO) Crypto library (debug version)
  .
  This package provides the debug version of the POCO Crypto library.
 
-Package: libpococrypto40
+Package: libpococrypto31
 Architecture: any
-Depends: libpocofoundation40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Crypto library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -76,11 +76,11 @@ Description: C++ Portable Components (POCO) Crypto library
  .
  This package provides the POCO Crypto library.
 
-Package: libpocodata40-dbg
+Package: libpocodata31-dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocodata40 (= ${binary:Version}), ${misc:Depends}
+Depends: libpocodata31 (= ${binary:Version}), ${misc:Depends}
 Description: C++ Portable Components (POCO) Data library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -94,9 +94,9 @@ Description: C++ Portable Components (POCO) Data library (debug version)
  .
  This package provides the debug version of the POCO Data library.
 
-Package: libpocodata40
+Package: libpocodata31
 Architecture: any
-Depends: libpocofoundation40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Data library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -110,11 +110,11 @@ Description: C++ Portable Components (POCO) Data library
  .
  This package provides the POCO Data library.
 
-Package: libpocodatamysql40-dbg
+Package: libpocodatamysql31-dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocodatamysql40 (= ${binary:Version}), ${misc:Depends}
+Depends: libpocodatamysql31 (= ${binary:Version}), ${misc:Depends}
 Description: C++ Portable Components (POCO) Data MySQL library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -128,9 +128,9 @@ Description: C++ Portable Components (POCO) Data MySQL library (debug version)
  .
  This package provides the debug version of the POCO Data MySQL library.
 
-Package: libpocodatamysql40
+Package: libpocodatamysql31
 Architecture: any
-Depends: libpocofoundation40 (= ${binary:Version}), libpocodata40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation31 (= ${binary:Version}), libpocodata31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Data MySQL library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -144,11 +144,11 @@ Description: C++ Portable Components (POCO) Data MySQL library
  .
  This package provides the POCO Data MySQL library.
 
-Package: libpocodataodbc40-dbg
+Package: libpocodataodbc31-dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocodataodbc40 (= ${binary:Version}), ${misc:Depends}
+Depends: libpocodataodbc31 (= ${binary:Version}), ${misc:Depends}
 Description: C++ Portable Components (POCO) Data ODBC library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -162,9 +162,9 @@ Description: C++ Portable Components (POCO) Data ODBC library (debug version)
  .
  This package provides the debug version of the POCO Data ODBC library.
 
-Package: libpocodataodbc40
+Package: libpocodataodbc31
 Architecture: any
-Depends: libpocofoundation40 (= ${binary:Version}), libpocodata40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation31 (= ${binary:Version}), libpocodata31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) ODBC library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -179,11 +179,11 @@ Description: C++ Portable Components (POCO) ODBC library
  This package provides the POCO Data ODBC library. In Debian, it is linked
  against unixODBC but also iODBC can be used instead.
 
-Package: libpocodatasqlite40-dbg
+Package: libpocodatasqlite31-dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocodatasqlite40 (= ${binary:Version}), ${misc:Depends}
+Depends: libpocodatasqlite31 (= ${binary:Version}), ${misc:Depends}
 Description: C++ Portable Components (POCO) Data SQLite library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -197,9 +197,9 @@ Description: C++ Portable Components (POCO) Data SQLite library (debug version)
  .
  This package provides the debug version of the POCO Data SQLite library.
 
-Package: libpocodatasqlite40
+Package: libpocodatasqlite31
 Architecture: any
-Depends: libpocofoundation40 (= ${binary:Version}), libpocodata40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation31 (= ${binary:Version}), libpocodata31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Data SQLite library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -213,11 +213,11 @@ Description: C++ Portable Components (POCO) Data SQLite library
  .
  This package provides the POCO Data SQLite library.
 
-Package: libpocofoundation40-dbg
+Package: libpocofoundation31-dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation40 (= ${binary:Version}), ${misc:Depends}
+Depends: libpocofoundation31 (= ${binary:Version}), ${misc:Depends}
 Description: C++ Portable Components (POCO) Foundation library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -231,7 +231,7 @@ Description: C++ Portable Components (POCO) Foundation library (debug version)
  .
  This package provides the debug version of POCO Foundation library.
 
-Package: libpocofoundation40
+Package: libpocofoundation31
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Foundation library
@@ -247,11 +247,11 @@ Description: C++ Portable Components (POCO) Foundation library
  .
  This package provides the POCO Foundation library.
 
-Package: libpoconet40-dbg
+Package: libpoconet31-dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpoconet40 (= ${binary:Version}), ${misc:Depends}
+Depends: libpoconet31 (= ${binary:Version}), ${misc:Depends}
 Description: C++ Portable Components (POCO) Network library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -265,9 +265,9 @@ Description: C++ Portable Components (POCO) Network library (debug version)
  .
  This package provides the debug version of POCO Network library.
 
-Package: libpoconet40
+Package: libpoconet31
 Architecture: any
-Depends: libpocofoundation40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Network library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -281,11 +281,11 @@ Description: C++ Portable Components (POCO) Network library
  .
  This package provides the POCO Net library.
 
-Package: libpoconetssl40-dbg
+Package: libpoconetssl31-dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpoconetssl40 (= ${binary:Version}), ${misc:Depends}
+Depends: libpoconetssl31 (= ${binary:Version}), ${misc:Depends}
 Description: C++ Portable Components (POCO) Network library with SSL (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -299,9 +299,9 @@ Description: C++ Portable Components (POCO) Network library with SSL (debug vers
  .
  This package provides the debug version of POCO Network SSL library.
 
-Package: libpoconetssl40
+Package: libpoconetssl31
 Architecture: any
-Depends: libpocofoundation40 (= ${binary:Version}), libpococrypto40 (= ${binary:Version}), libpoconet40 (= ${binary:Version}), libpocoutil40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation31 (= ${binary:Version}), libpococrypto31 (= ${binary:Version}), libpoconet31 (= ${binary:Version}), libpocoutil31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Network library with SSL
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -315,11 +315,11 @@ Description: C++ Portable Components (POCO) Network library with SSL
  .
  This package provides the POCO Network SSL library.
 
-Package: libpocoutil40-dbg
+Package: libpocoutil31-dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocoutil40 (= ${binary:Version}), ${misc:Depends}
+Depends: libpocoutil31 (= ${binary:Version}), ${misc:Depends}
 Description: C++ Portable Components (POCO) Util library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -333,9 +333,9 @@ Description: C++ Portable Components (POCO) Util library (debug version)
  .
  This package provides the debug version of POCO Util library.
 
-Package: libpocoutil40
+Package: libpocoutil31
 Architecture: any
-Depends: libpocofoundation40 (= ${binary:Version}), libpocojson40 (= ${binary:Version}), libpocoxml40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation31 (= ${binary:Version}), libpocojson31 (= ${binary:Version}), libpocoxml31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Util library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -349,11 +349,11 @@ Description: C++ Portable Components (POCO) Util library
  .
  This package provides POCO Util library.
 
-Package: libpocoxml40-dbg
+Package: libpocoxml31-dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocoxml40 (= ${binary:Version}), ${misc:Depends}
+Depends: libpocoxml31 (= ${binary:Version}), ${misc:Depends}
 Description: C++ Portable Components (POCO) XML library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -367,9 +367,9 @@ Description: C++ Portable Components (POCO) XML library (debug version)
  .
  This package provides the debug version of POCO XML library.
 
-Package: libpocoxml40
+Package: libpocoxml31
 Architecture: any
-Depends: libpocofoundation40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) XML library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -383,11 +383,11 @@ Description: C++ Portable Components (POCO) XML library
  .
  This package provides the POCO XML library.
 
-Package: libpocojson40-dbg
+Package: libpocojson31-dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocojson40 (= ${binary:Version}), ${misc:Depends}
+Depends: libpocojson31 (= ${binary:Version}), ${misc:Depends}
 Description: C++ Portable Components (POCO) XML library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -401,9 +401,9 @@ Description: C++ Portable Components (POCO) XML library (debug version)
  .
  This package provides the debug version of POCO JSON library.
 
-Package: libpocojson40
+Package: libpocojson31
 Architecture: any
-Depends: libpocofoundation40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) XML library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -417,11 +417,11 @@ Description: C++ Portable Components (POCO) XML library
  .
  This package provides the POCO JSON library.
 
-Package: libpocozip40-dbg
+Package: libpocozip31-dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocozip40 (= ${binary:Version}), ${misc:Depends}
+Depends: libpocozip31 (= ${binary:Version}), ${misc:Depends}
 Description: C++ Portable Components (POCO) Zip library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -435,9 +435,9 @@ Description: C++ Portable Components (POCO) Zip library (debug version)
  .
  This package provides the debug version of POCO Zip library.
 
-Package: libpocozip40
+Package: libpocozip31
 Architecture: any
-Depends: libpocofoundation40 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Zip library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
