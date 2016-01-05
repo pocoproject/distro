@@ -1,6 +1,7 @@
 poco (1.6.1-8) experimental; urgency=low
 
   * Qualify by poco version: 1.6.1
+  * Build shared release only
 
  -- Francis ANDRE <zosrothko@orange.fr>  Tue, 05 Jan 2016 23:43:40 +0100
 
