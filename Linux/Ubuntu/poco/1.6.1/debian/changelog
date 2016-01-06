@@ -1,3 +1,9 @@
+poco (1.6.1-9) experimental; urgency=low
+
+  * Add MongoDB & PDF
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Tue, 05 Jan 2016 23:43:40 +0100
+
 poco (1.6.1-8) experimental; urgency=low
 
   * Qualify by poco version: 1.6.1

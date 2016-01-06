@@ -21,7 +21,7 @@ Vcs-Git: git://git.debian.org/git/collab-maint/poco.git
 Package: libpoco-dev
 Section: libdevel
 Architecture: any
-Depends: ${misc:Depends}, libpococrypto-31 (= ${binary:Version}), libpocodata-31 (= ${binary:Version}), libpocofoundation-31 (= ${binary:Version}), libpocodatamysql-31 (= ${binary:Version}), libpoconet-31 (= ${binary:Version}), libpoconetssl-31 (= ${binary:Version}), libpocodataodbc-31 (= ${binary:Version}), libpocodatasqlite-31 (= ${binary:Version}), libpocojson-31 (= ${binary:Version}), libpocoxml-31 (= ${binary:Version}), libpocoutil-31 (= ${binary:Version}),  libpocozip-31 (= ${binary:Version}), libpococryptod-31 (= ${binary:Version}), libpocodatad-31 (= ${binary:Version}), libpocofoundationd-31 (= ${binary:Version}), libpocodatamysqld-31 (= ${binary:Version}), libpoconetd-31 (= ${binary:Version}), libpoconetssld-31 (= ${binary:Version}), libpocodataodbcd-31 (= ${binary:Version}), libpocodatasqlited-31 (= ${binary:Version}), libpocojsond-31 (= ${binary:Version}), libpocoxmld-31 (= ${binary:Version}), libpocoutild-31 (= ${binary:Version}),  libpocozipd-31 (= ${binary:Version})
+Depends: ${misc:Depends}, libpococrypto-31 (= ${binary:Version}), libpocodata-31 (= ${binary:Version}), libpocofoundation-31 (= ${binary:Version}), libpocodatamysql-31 (= ${binary:Version}), libpoconet-31 (= ${binary:Version}), libpoconetssl-31 (= ${binary:Version}), libpocodataodbc-31 (= ${binary:Version}), libpocodatasqlite-31 (= ${binary:Version}), libpocojson-31 (= ${binary:Version}), libpocoxml-31 (= ${binary:Version}), libpocoutil-31 (= ${binary:Version}),  libpocozip-31 (= ${binary:Version}), libpocomongodb-31 (= ${binary:Version}), libpocopdf-31 (= ${binary:Version}), libpococryptod-31 (= ${binary:Version}), libpocodatad-31 (= ${binary:Version}), libpocofoundationd-31 (= ${binary:Version}), libpocodatamysqld-31 (= ${binary:Version}), libpoconetd-31 (= ${binary:Version}), libpoconetssld-31 (= ${binary:Version}), libpocodataodbcd-31 (= ${binary:Version}), libpocodatasqlited-31 (= ${binary:Version}), libpocojsond-31 (= ${binary:Version}), libpocoxmld-31 (= ${binary:Version}), libpocoutild-31 (= ${binary:Version}),  libpocozipd-31 (= ${binary:Version}), libpocomongodbd-31 (= ${binary:Version}), libpocopdfd-31 (= ${binary:Version})
 Suggests: libpoco-doc, libpococryptod-31 (= ${binary:Version}), libpocodatad-31 (= ${binary:Version}), libpocofoundationd-31 (= ${binary:Version}), libpocodatamysqld-31 (= ${binary:Version}), libpoconetd-31 (= ${binary:Version}), libpoconetssld-31 (= ${binary:Version}), libpocodataodbcd-31 (= ${binary:Version}), libpocodatasqlited-31 (= ${binary:Version}), libpocoJSONd-31 (= ${binary:Version}), libpocoxmld-31 (= ${binary:Version}), libpocoutild-31 (= ${binary:Version}), libpocozipd-31 (= ${binary:Version})
 Provides: libpoco5-dev
 Conflicts: libpoco5-dev
@@ -450,3 +450,71 @@ Description: C++ Portable Components (POCO) Zip library
  consistent and easy to maintain.
  .
  This package provides the POCO Zip library.
+
+Package: libpocomongodbd-31
+Priority: extra
+Section: debug
+Architecture: any
+Depends: libpocofoundationd-31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: C++ Portable Components (POCO) Zip library (debug version)
+ The POCO C++ Libraries are a collection of open source C++ class libraries
+ that simplify and accelerate the development of network-centric, portable
+ applications in C++. The libraries integrate perfectly with the C++ Standard
+ Library and fill many of the functional gaps left open by it.
+ .
+ POCO is built strictly using standard ANSI/ISO C++, including the standard
+ library. The contributors attempt to find a good balance between using advanced
+ C++ features and keeping the classes comprehensible and the code clean,
+ consistent and easy to maintain.
+ .
+ This package provides the debug version of POCO MongoDB library.
+
+Package: libpocomongodb-31
+Architecture: any
+Depends: libpocofoundation-31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: C++ Portable Components (POCO) Zip library
+ The POCO C++ Libraries are a collection of open source C++ class libraries
+ that simplify and accelerate the development of network-centric, portable
+ applications in C++. The libraries integrate perfectly with the C++ Standard
+ Library and fill many of the functional gaps left open by it.
+ .
+ POCO is built strictly using standard ANSI/ISO C++, including the standard
+ library. The contributors attempt to find a good balance between using advanced
+ C++ features and keeping the classes comprehensible and the code clean,
+ consistent and easy to maintain.
+ .
+ This package provides the POCO MongoDB library.
+ Package: libpocopdfd-31
+Priority: extra
+Section: debug
+Architecture: any
+Depends: libpocofoundationd-31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: C++ Portable Components (POCO) Zip library (debug version)
+ The POCO C++ Libraries are a collection of open source C++ class libraries
+ that simplify and accelerate the development of network-centric, portable
+ applications in C++. The libraries integrate perfectly with the C++ Standard
+ Library and fill many of the functional gaps left open by it.
+ .
+ POCO is built strictly using standard ANSI/ISO C++, including the standard
+ library. The contributors attempt to find a good balance between using advanced
+ C++ features and keeping the classes comprehensible and the code clean,
+ consistent and easy to maintain.
+ .
+ This package provides the debug version of POCO PDF library.
+
+Package: libpocopdf-31
+Architecture: any
+Depends: libpocofoundation-31 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: C++ Portable Components (POCO) Zip library
+ The POCO C++ Libraries are a collection of open source C++ class libraries
+ that simplify and accelerate the development of network-centric, portable
+ applications in C++. The libraries integrate perfectly with the C++ Standard
+ Library and fill many of the functional gaps left open by it.
+ .
+ POCO is built strictly using standard ANSI/ISO C++, including the standard
+ library. The contributors attempt to find a good balance between using advanced
+ C++ features and keeping the classes comprehensible and the code clean,
+ consistent and easy to maintain.
+ .
+ This package provides the POCO PDF library.
+ 
