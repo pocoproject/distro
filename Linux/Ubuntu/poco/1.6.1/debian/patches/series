@@ -8,7 +8,6 @@ poco-makefile.patch
 pocodoc-makefile.patch
 mkdocfind releas.patch
 pocodoc-cfg.patch
-build-shared-release.patch
 
 # patches for unbundling
 unbundled-pcre.patch

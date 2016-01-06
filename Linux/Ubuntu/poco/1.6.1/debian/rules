@@ -20,7 +20,7 @@ else ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
 	CONFFLAGS += --config=FreeBSD
 endif
 
-POCO_LIBS = $(shell dh_listpackages | grep dbg | sed -e 's/-dbg//')
+POCO_LIBS = $(shell dh_listpackages)
 
 
 %:
@@ -35,7 +35,8 @@ override_dh_auto_configure:
 	./configure $(CONFFLAGS)
 	
 override_dh_auto_build:
-	dh_auto_build -- LINKMODE=SHARED_RELEASE MAKEFLAGS=-s STRIP= 
+	dh_auto_build -- MAKEFLAGS=-s STRIP= 
+#	POCO_BASE=$(shell pwd) PATH=$$POCO_BASE/release/script:$$PATH mkdoc all
 	
 override_dh_auto_test:
 	./debian/testrunner.sh
