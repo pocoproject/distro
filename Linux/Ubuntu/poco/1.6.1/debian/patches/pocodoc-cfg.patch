@@ -1,5 +1,4 @@
-Description: Let the build system honor flags obtained through dpkg-buildflags.
- Try to append flags where possible. Also remove the -Ox flags set by upstream.
+Description: Add MySQL include path.
 Origin: vendor
 Forwarded: not-needed
 Author: Francis ANDRE <zosrothko@orange.fr>
@@ -16,3 +15,4 @@ index c9c7df9..3ae5021 100644
  				-D_DEBUG,
  				-E,
  				-C,
+ 				

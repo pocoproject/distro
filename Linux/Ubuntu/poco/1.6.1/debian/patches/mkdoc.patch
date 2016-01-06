@@ -1,5 +1,4 @@
-Description: Let the build system honor flags obtained through dpkg-buildflags.
- Try to append flags where possible. Also remove the -Ox flags set by upstream.
+Description: Add poco shared libs to LD_LIBRARY_PATH.
 Origin: vendor
 Forwarded: not-needed
 Author: Francis ANDRE <zosrothko@orange.fr>
@@ -27,3 +26,4 @@ index 40f5b0b..2f1eeff
 +
  echo "Building documentation $release (using $docConfig)"
  mkdocumentation $reltag $relspec -C $docConfig -v $version
+ 

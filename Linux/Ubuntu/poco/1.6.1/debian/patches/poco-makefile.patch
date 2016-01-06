@@ -3,6 +3,8 @@ Origin: vendor
 Forwarded: not-needed
 Author: Francis ANDRE <zosrothko@orange.fr>
 
+diff --git a/Makefile b/Makefile
+index 49318a3..8203f7e 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -20,6 +20,8 @@
@@ -14,3 +16,4 @@ Author: Francis ANDRE <zosrothko@orange.fr>
  .PHONY: poco all libexecs cppunit tests samples cleans clean distclean install
  
  # TESTS and SAMPLES are set in config.make
+ 

@@ -42,7 +42,7 @@ override_dh_auto_test:
 	./debian/testrunner.sh
 
 override_dh_strip-%:
-	dh_strip -p$* --dbg-package=$*-dbg
+#	dh_strip -p$* --dbg-package=$*-dbg
 
-override_dh_strip:	$(POCO_LIBS:%=override_dh_strip-%)
+#override_dh_strip:	$(POCO_LIBS:%=override_dh_strip-%)
 

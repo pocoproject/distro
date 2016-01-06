@@ -29,3 +29,4 @@ Author: Francis ANDRE <zosrothko@orange.fr>
  #elif defined(POCO_OS_FAMILY_WINDOWS)
  	std::string s = Path::expand("%TMP%\\foo");
  	assert (s == Environment::get("TMP") + "\\foo");
+ 

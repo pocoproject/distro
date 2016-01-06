@@ -6,8 +6,8 @@ no-link-dl-rt.patch  #could be removed now
 fix-odbc-makefile.patch
 poco-makefile.patch
 pocodoc-makefile.patch
-mkdocfind releas.patch
 pocodoc-cfg.patch
+mkdoc.patch
 
 # patches for unbundling
 unbundled-pcre.patch
