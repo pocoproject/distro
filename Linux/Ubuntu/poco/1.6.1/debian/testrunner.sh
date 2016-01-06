@@ -31,3 +31,4 @@ for testlib in ${ENABLED_TEST_LIBS}; do
 done
 
 rm -rf ${TESTDIR}
+
