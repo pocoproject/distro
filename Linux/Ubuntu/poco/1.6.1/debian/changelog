@@ -1,8 +1,22 @@
+poco (1.6.1-11) experimental; urgency=low
+
+  * Fix control as version 31 for likbpoco-dev
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 08 Jan 2016 00:02:17 +0100
+
+poco (1.6.1-10) experimental; urgency=low
+
+  * Fix rel & dgb dependecies
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Thu, 07 Jan 2016 13:52:55 +0100
+
 poco (1.6.1-9) experimental; urgency=low
 
   * Add MongoDB & PDF
+  * Add PageCompiler & File2Page
+  * Rename install files
 
- -- Francis ANDRE <zosrothko@orange.fr>  Tue, 05 Jan 2016 23:43:40 +0100
+ -- Francis ANDRE <zosrothko@orange.fr>  Thu, 07 Jan 2016 09:52:16 +0100
 
 poco (1.6.1-8) experimental; urgency=low
 
