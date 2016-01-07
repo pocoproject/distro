@@ -35,7 +35,7 @@ else ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
 	CONFFLAGS += --config=FreeBSD
 endif
 
-POCO_LIBS = $(shell dh_listpackages | grep '.rel$')
+POCO_LIBS = $(shell dh_listpackages | grep '.rel')
 
 
 %:
