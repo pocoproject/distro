@@ -1,7 +1,9 @@
 Source: poco
 Priority: optional
-Maintainer: Krzysztof Burghardt <krzysztof@burghardt.pl>
-Uploaders: Patrick Gansterer <paroga@paroga.com>, Cristian Greco <cristian@debian.org>, Francis ANDRE <zosrothko@orange.fr>
+Maintainer: 	Krzysztof Burghardt <krzysztof@burghardt.pl>
+Uploaders: 		Patrick Gansterer <paroga@paroga.com>, 
+				Cristian Greco <cristian@debian.org>, 
+				Francis ANDRE <zosrothko@orange.fr>
 Build-Depends: debhelper (>= 9),
                dpkg-dev (>= 1.16.1~),
                libexpat1-dev,
@@ -18,13 +20,13 @@ Homepage: http://pocoproject.org/
 Vcs-Browser: http://git.debian.org/?p=collab-maint/poco.git
 Vcs-Git: git://git.debian.org/git/collab-maint/poco.git
 
+#--------------------------------------------------------------------------------------------------
 Package: libpoco-dev
 Section: libdevel
 Architecture: any
 Depends: libpococrypto-31.rel (= ${binary:Version}), libpocodata-31.rel (= ${binary:Version}), libpocofoundation-31.rel (= ${binary:Version}), libpocodatamysql-31.rel (= ${binary:Version}), libpoconet-31.rel (= ${binary:Version}), libpoconetssl-31.rel (= ${binary:Version}), libpocodataodbc-31.rel (= ${binary:Version}), libpocodatasqlite-31.rel (= ${binary:Version}), libpocojson-31.rel (= ${binary:Version}), libpocoxml-31.rel (= ${binary:Version}), libpocoutil-31.rel (= ${binary:Version}),  libpocozip-31.rel (= ${binary:Version}), libpocomongodb-31.rel (= ${binary:Version}), libpocopdf-31.rel (= ${binary:Version}), exepocopagecompiler-31.rel (= ${binary:Version}), exepocofile2page-31.rel (= ${binary:Version}),
          libpococrypto-31.dbg (= ${binary:Version}), libpocodata-31.dbg (= ${binary:Version}), libpocofoundation-31.dbg (= ${binary:Version}), libpocodatamysql-31.dbg (= ${binary:Version}), libpoconet-31.dbg (= ${binary:Version}), libpoconetssl-31.dbg (= ${binary:Version}), libpocodataodbc-31.dbg (= ${binary:Version}), libpocodatasqlite-31.dbg (= ${binary:Version}), libpocojson-31.dbg (= ${binary:Version}), libpocoxml-31.dbg (= ${binary:Version}), libpocoutil-31.dbg (= ${binary:Version}),  libpocozip-31.dbg (= ${binary:Version}), libpocomongodb-31.dbg (= ${binary:Version}), libpocopdf-31.dbg (= ${binary:Version}), exepocopagecompiler-31.dbg (= ${binary:Version}), exepocofile2page-31.dbg (= ${binary:Version}),
-          ${misc:Depends}
-          
+         ${misc:Depends} 
 Suggests: libpoco-doc, libpococrypto-31.dbg (= ${binary:Version}), libpocodata-31.dbg (= ${binary:Version}), libpocofoundation-31.dbg (= ${binary:Version}), libpocodatamysql-31.dbg (= ${binary:Version}), libpoconet-31.dbg (= ${binary:Version}), libpoconetssl-31.dbg (= ${binary:Version}), libpocodataodbc-31.dbg (= ${binary:Version}), libpocodatasqlite-31.dbg (= ${binary:Version}), libpocoJSON-31.dbg (= ${binary:Version}), libpocoxml-31.dbg (= ${binary:Version}), libpocoutil-31.dbg (= ${binary:Version}), libpocozip-31.dbg (= ${binary:Version})
 Provides: libpoco5-dev
 Conflicts: libpoco5-dev
@@ -585,6 +587,7 @@ Description: C++ Portable Components (POCO) Zip library
  consistent and easy to maintain.
  .
  This package provides the POCO PageCompiler executable.
+
 #--------------------------------------------------------------------------------------------------
 Package: exepocofile2page-31.dbg
 Priority: extra
