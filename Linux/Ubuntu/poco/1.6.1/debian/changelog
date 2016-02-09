@@ -1,3 +1,74 @@
+poco (1.6.1-11) experimental; urgency=low
+
+  * Fix control as version 31 for likbpoco-dev
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 08 Jan 2016 00:02:17 +0100
+
+poco (1.6.1-10) experimental; urgency=low
+
+  * Fix rel & dgb dependecies
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Thu, 07 Jan 2016 13:52:55 +0100
+
+poco (1.6.1-9) experimental; urgency=low
+
+  * Add MongoDB & PDF
+  * Add PageCompiler & File2Page
+  * Rename install files
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Thu, 07 Jan 2016 09:52:16 +0100
+
+poco (1.6.1-8) experimental; urgency=low
+
+  * Qualify by poco version: 1.6.1
+  * Build & install shared release and debug build
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Tue, 05 Jan 2016 23:43:40 +0100
+
+poco (1.6.1-7) experimental; urgency=low
+
+  * Fix ls -la ${HOME}
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-6) experimental; urgency=low
+
+  * change suffix from 40 to 31 to align with libversion libPoco*.so.31
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-5) experimental; urgency=low
+
+  * remove patches/no-strip-release-build
+  * add rules/override_auto_build and pass MAKEFLAGS=-s STRIP=
+  * add foundation-pathtest.patch  
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-4) experimental; urgency=low
+
+  * New Upstream version 1.6.1
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-3) experimental; urgency=low
+
+  * New Upstream version 1.6.1
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-3) experimental; urgency=low
+
+  * New Upstream version 1.6.1
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-1) experimental; urgency=low
+
+  * New Upstream version 1.6.1
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
 poco (1.4.6p1-1) experimental; urgency=low
 
   * New Upstream version 1.4.6p1
