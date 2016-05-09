@@ -1,0 +1,8 @@
+Document: Poco
+Title: Poco documentation
+Author: Applied Informatics Software Engineering GmbH & Contributors
+Abstract: This manual describes what Poco is, and how it can be used.
+Section: File Management
+Format: HTML
+Index: /usr/share/doc/poco/html/index.html
+Files: /usr/share/doc/poco/html/*.html

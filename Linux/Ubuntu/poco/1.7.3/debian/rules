@@ -1,0 +1,59 @@
+#!/usr/bin/make -f
+
+export LC_ALL=C
+export DH_VERBOSE=1
+
+# -----------------------------------------------------------------------------
+# Trusty dpkg-buildflags
+#
+# CPPFLAGS	=-D_FORTIFY_SOURCE=2
+# CFLAGS	=-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security
+# CXXFLAGS	=-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security
+# FFLAGS	=-g -O2 -fstack-protector --param=ssp-buffer-size=4
+# GCJFLAGS	=-g -O2 -fstack-protector --param=ssp-buffer-size=4
+# LDFLAGS	=-Wl,-Bsymbolic-functions -Wl,-z,relro
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+# Precise dpkg-buildflags
+# -----------------------------------------------------------------------------
+
+DPKG_EXPORT_BUILDFLAGS = 1
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+include /usr/share/dpkg/buildflags.mk
+
+CONFFLAGS = --prefix=/usr --unbundled
+
+# Disable parallel build on armel and mipsel
+ifeq ($(or $(findstring armel, $(DEB_HOST_ARCH)), $(findstring mipsel, $(DEB_HOST_ARCH))), )
+	EXTRA_DH_OPTS += --parallel
+endif
+
+ifeq ($(DEB_HOST_ARCH_OS),linux)
+	CONFFLAGS += --config=Linux
+else ifeq ($(DEB_HOST_ARCH_OS),kfreebsd)
+	CONFFLAGS += --config=FreeBSD
+endif
+
+POCO_LIBS = $(shell dh_listpackages | grep '.rel')
+
+
+%:
+	dh $@ --with=quilt $(EXTRA_DH_OPTS)
+
+override_dh_auto_configure:
+	env | sort
+	./configure $(CONFFLAGS)
+	
+override_dh_auto_build:
+	dh_auto_build -- MAKEFLAGS=-s STRIP= 
+#	POCO_BASE=$(shell pwd) PATH=$$POCO_BASE/release/script:$$PATH mkdoc all
+	
+override_dh_auto_test:
+	./debian/testrunner.sh
+
+override_dh_strip-%:
+	dh_strip -p$*
+
+override_dh_strip:	$(POCO_LIBS:%=override_dh_strip-%)
+

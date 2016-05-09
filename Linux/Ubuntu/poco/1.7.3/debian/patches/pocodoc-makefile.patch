@@ -1,0 +1,18 @@
+Description: Add lib dependenwcy PocoJSON.
+Origin: vendor
+Forwarded: not-needed
+Author: Francis ANDRE <zosrothko@orange.fr>
+
+diff --git a/PocoDoc/Makefile b/PocoDoc/Makefile
+index 1251308..4d89381 100644
+--- a/PocoDoc/Makefile
++++ b/PocoDoc/Makefile
+@@ -12,6 +12,6 @@
+ 
+ target         = PocoDoc
+ target_version = 1
+-target_libs    = PocoCppParser PocoFoundation PocoXML PocoUtil
++target_libs    = PocoCppParser PocoFoundation PocoJSON PocoXML PocoUtil
+ 
+ include $(POCO_BASE)/build/rules/exec
+ 
