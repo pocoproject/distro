@@ -6,6 +6,10 @@ successive versions of Poco starting from release Poco-1.6.1.
  
 CHANGELOG contains all changes for the following releases
 
+- Release 1.7.3 (2016-05-02)
+- Release 1.7.2 (2016-03-21)
+- Release 1.7.1 (2016-03-14)
+- Release 1.7.0 (2016-03-07)
 - Release 1.6.1 (2015-08-03)
 - Release 1.6.0 (2014-12-22)
 - Release 1.5.4 (2014-10-14)
