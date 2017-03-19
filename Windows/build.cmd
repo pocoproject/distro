@@ -9,18 +9,19 @@ set VIXTOOLSET="C:\Program Files (x86)\WiX Toolset v3.10"
 rem Usage:
 rem ------
 rem build 			VSYEAR POCO_BASE
-rem VSYEAR			:  VS2008 | VS2010 | VS2012 | VS2013 | VS2015
+rem VSYEAR			:  VS2008 | VS2010 | VS2012 | VS2013 | VS2015 | VS2017
 rem POCO_BASE       : the usual POCO_BASE absolute directory
 
 :parse
-rem VSYEAR			:  VS2008 | VS2010 | VS2012 | VS2013 | VS2015
+rem VSYEAR			:  VS2008 | VS2010 | VS2012 | VS2013 | VS2015 | VS2017
 if "%1"=="" goto usage
 set VSYEAR=%1
 if not "%VSYEAR%"=="VS2008" (
 if not "%VSYEAR%"=="VS2010" (
 if not "%VSYEAR%"=="VS2012" (
 if not "%VSYEAR%"=="VS2013" (
-if not "%VSYEAR%"=="VS2015" goto usage))))
+if not "%VSYEAR%"=="VS2015" (
+if not "%VSYEAR%"=="VS2017" goto usage)))))
 
 if "%2"=="" goto usage
 rem set REL_PATH=..\..\..\
@@ -73,7 +74,7 @@ goto :end
  
 :usage
 echo "build <VSYEAR> <POCO_BASE>"
-echo "VSYEAR          : { VS2008 | VS2010 | VS2012 | VS2013 | VS2015 }"
+echo "VSYEAR          : { VS2008 | VS2010 | VS2012 | VS2013 | VS2015 | VS2017 }"
 echo "POCO_BASE       : the usual POCO_BASE absolute directory
 
 :end
