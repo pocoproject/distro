@@ -6,11 +6,6 @@ successive versions of Poco starting from release Poco-1.6.1.
  
 CHANGELOG contains all changes for the following releases
 
-- Release 1.7.8 (2017-02-21)
-- Release 1.7.7 (2016-12-31)
-- Release 1.7.6 (2016-10-18)
-- Release 1.7.5 (2016-08-29)
-- Release 1.7.4 (2016-07-20)
 - Release 1.7.3 (2016-05-02)
 - Release 1.7.2 (2016-03-21)
 - Release 1.7.1 (2016-03-14)
@@ -85,9 +80,9 @@ CHANGELOG contains all changes for the following releases
 
 POrtable COmponents C++ Libraries are:
 --------------------------------------
-- A collection of C++ class libraries, conceptually similar to the Java Class Library, the .NET Framework or Appleâ€™s Cocoa.
+- A collection of C++ class libraries, conceptually similar to the Java Class Library, the .NET Framework or Apple’s Cocoa.
 - Focused on solutions to frequently-encountered practical problems.
-- Focused on â€˜internet-ageâ€™ network-centric applications.
+- Focused on ‘internet-age’ network-centric applications.
 - Written in efficient, modern, 100% ANSI/ISO Standard C++.
 - Based on and complementing the C++ Standard Library/STL.
 - Highly portable and available on many different platforms.
