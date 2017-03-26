@@ -1,0 +1,32 @@
+Description: .bashrc does not exist in Bourne shell, but .profile always.
+Origin: vendor
+Forwarded: not-needed
+Author: Francis ANDRE <zosrothko@orange.fr>
+
+--- a/Foundation/testsuite/src/PathTest.cpp
++++ b/Foundation/testsuite/src/PathTest.cpp
+@@ -1511,15 +1511,15 @@
+ void PathTest::testExpand()
+ {
+ #if defined(POCO_OS_FAMILY_UNIX)
+-	std::string s = Path::expand("~/.bashrc");
+-	assert (s == Path::expand("$HOME/.bashrc"));
+-	assert (s == Environment::get("HOME") + "/.bashrc" || 
+-	        s == Environment::get("HOME") + "//.bashrc");
++	std::string s = Path::expand("~/.profile");
++	assert (s == Path::expand("$HOME/.profile"));
++	assert (s == Environment::get("HOME") + "/.profile" ||
++	        s == Environment::get("HOME") + "//.profile");
+ 	Path p(s);
+-	s = Path::expand("$HOME/.bashrc");
+-	assert (s == Path::expand("~/.bashrc"));
+-	s = Path::expand("${HOME}/.bashrc");
+-	assert (s == Path::expand("~/.bashrc"));
++	s = Path::expand("$HOME/.profile");
++	assert (s == Path::expand("~/.profile"));
++	s = Path::expand("${HOME}/.profile");
++	assert (s == Path::expand("~/.profile"));
+ #elif defined(POCO_OS_FAMILY_WINDOWS)
+ 	std::string s = Path::expand("%TMP%\\foo");
+ 	assert (s == Environment::get("TMP") + "\\foo");
+ 
