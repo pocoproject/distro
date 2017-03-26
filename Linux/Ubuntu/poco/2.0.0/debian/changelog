@@ -1,3 +1,9 @@
+poco (2.0.0-2) UNRELEASED; urgency=medium
+
+  * Adjust patches for 2.0.0
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Sun, 26 Mar 2017 22:15:12 +0200
+
 poco (2.0.0-1) UNRELEASED; urgency=medium
 
   * Initial release. 
