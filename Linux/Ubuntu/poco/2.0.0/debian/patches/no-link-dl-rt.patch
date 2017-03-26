@@ -5,12 +5,13 @@ Author: Cristian Greco <cristian@debian.org>
 
 --- a/build/config/Linux
 +++ b/build/config/Linux
-@@ -68,4 +68,4 @@
+@@ -74,5 +74,5 @@
  #
  # System Specific Libraries
  #
 -SYSLIBS  = -lpthread -ldl -lrt
 +SYSLIBS  = -lpthread
+
 --- a/Foundation/Makefile
 +++ b/Foundation/Makefile
 @@ -54,6 +54,10 @@

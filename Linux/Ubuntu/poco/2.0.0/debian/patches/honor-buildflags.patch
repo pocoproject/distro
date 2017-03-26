@@ -1,46 +1,35 @@
-Description: Let the build system honor flags obtained through dpkg-buildflags.
- Try to append flags where possible. Also remove the -Ox flags set by upstream.
-Origin: vendor
-Forwarded: http://sourceforge.net/tracker/?func=detail&aid=3470774&group_id=132964&atid=725711
-Author: Cristian Greco <cristian@debian.org>
-
 diff --git a/build/config/Linux b/build/config/Linux
-index 9d1c097..517e79d 100644
+index 40ef8f0..386f714 100644
 --- a/build/config/Linux
 +++ b/build/config/Linux
-@@ -20,7 +20,7 @@
+@@ -20,7 +20,7 @@ CXX     = ${CROSS_COMPILE}g++
  LINK    = $(CXX)
  LIB     = ${CROSS_COMPILE}ar -cr
  RANLIB  = ${CROSS_COMPILE}ranlib
 -SHLIB   = $(CXX) -shared -Wl,-soname,$(notdir $@) -o $@
-+SHLIB   = $(CXX) -shared -Wl,-soname,$(notdir $@) $(LDFLAGS) -o $@ 
++SHLIB   = $(CXX) -shared -Wl,-soname,$(notdir $@) $(LDFLAGS) -o $@
  SHLIBLN = $(POCO_BASE)/build/script/shlibln
  STRIP   = ${CROSS_COMPILE}strip
  DEP     = $(POCO_BASE)/build/script/makedepend.gcc 
-@@ -38,12 +38,15 @@
+@@ -38,10 +38,10 @@ SHAREDLIBLINKEXT = .so
  #
  # Compiler and Linker Flags
  #
 -CFLAGS          = 
-+CFLAGS          += 
- CFLAGS32        =
- CFLAGS64        =
++CFLAGS         += 
+ CFLAGS32        = 
+ CFLAGS64        = 
 -CXXFLAGS        = -Wall -Wno-sign-compare
-+CXXFLAGS        += -Wall -Wno-sign-compare $(CPPFLAGS)
- CXXFLAGS32      =
- CXXFLAGS64      =
-+SHLIBFLAGS      =
-+SHLIBFLAGS32    =
-+SHLIBFLAGS64    =
- LINKFLAGS       =
- LINKFLAGS32     =
- LINKFLAGS64     =
-@@ -52,13 +55,13 @@
++CXXFLAGS       += -Wall -Wno-sign-compare $(CPPFLAGS)
+ CXXFLAGS32      = 
+ CXXFLAGS64      = 
+ SHLIBFLAGS      = 
+@@ -58,13 +58,13 @@ STATICOPT_CXX   =
  STATICOPT_LINK  = -static
  SHAREDOPT_CC    = -fPIC
  SHAREDOPT_CXX   = -fPIC
 -SHAREDOPT_LINK  = -Wl,-rpath,$(LIBPATH)
-+SHAREDOPT_LINK  =
++SHAREDOPT_LINK  = 
  DEBUGOPT_CC     = -g -D_DEBUG
  DEBUGOPT_CXX    = -g -D_DEBUG
  DEBUGOPT_LINK   = -g
@@ -53,3 +42,67 @@ index 9d1c097..517e79d 100644
  
  #
  # System Specific Flags
+diff --git a/openssl/win32/bin/debug/libeay32MDd.dll b/openssl/win32/bin/debug/libeay32MDd.dll
+deleted file mode 100644
+index a57d303..0000000
+Binary files a/openssl/win32/bin/debug/libeay32MDd.dll and /dev/null differ
+diff --git a/openssl/win32/bin/debug/libeay32MDd.lib b/openssl/win32/bin/debug/libeay32MDd.lib
+deleted file mode 100644
+index d4bdc10..0000000
+Binary files a/openssl/win32/bin/debug/libeay32MDd.lib and /dev/null differ
+diff --git a/openssl/win32/bin/debug/ssleay32MDd.dll b/openssl/win32/bin/debug/ssleay32MDd.dll
+deleted file mode 100644
+index 8168f30..0000000
+Binary files a/openssl/win32/bin/debug/ssleay32MDd.dll and /dev/null differ
+diff --git a/openssl/win32/bin/debug/ssleay32MDd.lib b/openssl/win32/bin/debug/ssleay32MDd.lib
+deleted file mode 100644
+index 87f2a58..0000000
+Binary files a/openssl/win32/bin/debug/ssleay32MDd.lib and /dev/null differ
+diff --git a/openssl/win32/bin/release/libeay32MD.dll b/openssl/win32/bin/release/libeay32MD.dll
+deleted file mode 100644
+index b8e0d3e..0000000
+Binary files a/openssl/win32/bin/release/libeay32MD.dll and /dev/null differ
+diff --git a/openssl/win32/bin/release/libeay32MD.lib b/openssl/win32/bin/release/libeay32MD.lib
+deleted file mode 100644
+index e1c96b2..0000000
+Binary files a/openssl/win32/bin/release/libeay32MD.lib and /dev/null differ
+diff --git a/openssl/win32/bin/release/ssleay32MD.dll b/openssl/win32/bin/release/ssleay32MD.dll
+deleted file mode 100644
+index a7ab09e..0000000
+Binary files a/openssl/win32/bin/release/ssleay32MD.dll and /dev/null differ
+diff --git a/openssl/win32/bin/release/ssleay32MD.lib b/openssl/win32/bin/release/ssleay32MD.lib
+deleted file mode 100644
+index f946338..0000000
+Binary files a/openssl/win32/bin/release/ssleay32MD.lib and /dev/null differ
+diff --git a/openssl/win64/bin/debug/libeay64MDd.dll b/openssl/win64/bin/debug/libeay64MDd.dll
+deleted file mode 100644
+index 207dc3e..0000000
+Binary files a/openssl/win64/bin/debug/libeay64MDd.dll and /dev/null differ
+diff --git a/openssl/win64/bin/debug/libeay64MDd.lib b/openssl/win64/bin/debug/libeay64MDd.lib
+deleted file mode 100644
+index f17ee08..0000000
+Binary files a/openssl/win64/bin/debug/libeay64MDd.lib and /dev/null differ
+diff --git a/openssl/win64/bin/debug/ssleay64MDd.dll b/openssl/win64/bin/debug/ssleay64MDd.dll
+deleted file mode 100644
+index 80e9a5a..0000000
+Binary files a/openssl/win64/bin/debug/ssleay64MDd.dll and /dev/null differ
+diff --git a/openssl/win64/bin/debug/ssleay64MDd.lib b/openssl/win64/bin/debug/ssleay64MDd.lib
+deleted file mode 100644
+index d9abc84..0000000
+Binary files a/openssl/win64/bin/debug/ssleay64MDd.lib and /dev/null differ
+diff --git a/openssl/win64/bin/release/libeay64MD.dll b/openssl/win64/bin/release/libeay64MD.dll
+deleted file mode 100644
+index 3053bb3..0000000
+Binary files a/openssl/win64/bin/release/libeay64MD.dll and /dev/null differ
+diff --git a/openssl/win64/bin/release/libeay64MD.lib b/openssl/win64/bin/release/libeay64MD.lib
+deleted file mode 100644
+index 7b1c47b..0000000
+Binary files a/openssl/win64/bin/release/libeay64MD.lib and /dev/null differ
+diff --git a/openssl/win64/bin/release/ssleay64MD.dll b/openssl/win64/bin/release/ssleay64MD.dll
+deleted file mode 100644
+index 9aceca8..0000000
+Binary files a/openssl/win64/bin/release/ssleay64MD.dll and /dev/null differ
+diff --git a/openssl/win64/bin/release/ssleay64MD.lib b/openssl/win64/bin/release/ssleay64MD.lib
+deleted file mode 100644
+index f08f4df..0000000
+Binary files a/openssl/win64/bin/release/ssleay64MD.lib and /dev/null differ
