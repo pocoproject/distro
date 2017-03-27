@@ -24,7 +24,7 @@ index 40ef8f0..386f714 100644
  CXXFLAGS32      = 
  CXXFLAGS64      = 
  SHLIBFLAGS      = 
-@@ -58,13 +58,13 @@ STATICOPT_CXX   =
+@@ -58,11 +58,11 @@
  STATICOPT_LINK  = -static
  SHAREDOPT_CC    = -fPIC
  SHAREDOPT_CXX   = -fPIC
@@ -39,70 +39,3 @@ index 40ef8f0..386f714 100644
 +RELEASEOPT_CC   = -DNDEBUG
 +RELEASEOPT_CXX  = -DNDEBUG
 +RELEASEOPT_LINK = 
- 
- #
- # System Specific Flags
-diff --git a/openssl/win32/bin/debug/libeay32MDd.dll b/openssl/win32/bin/debug/libeay32MDd.dll
-deleted file mode 100644
-index a57d303..0000000
-Binary files a/openssl/win32/bin/debug/libeay32MDd.dll and /dev/null differ
-diff --git a/openssl/win32/bin/debug/libeay32MDd.lib b/openssl/win32/bin/debug/libeay32MDd.lib
-deleted file mode 100644
-index d4bdc10..0000000
-Binary files a/openssl/win32/bin/debug/libeay32MDd.lib and /dev/null differ
-diff --git a/openssl/win32/bin/debug/ssleay32MDd.dll b/openssl/win32/bin/debug/ssleay32MDd.dll
-deleted file mode 100644
-index 8168f30..0000000
-Binary files a/openssl/win32/bin/debug/ssleay32MDd.dll and /dev/null differ
-diff --git a/openssl/win32/bin/debug/ssleay32MDd.lib b/openssl/win32/bin/debug/ssleay32MDd.lib
-deleted file mode 100644
-index 87f2a58..0000000
-Binary files a/openssl/win32/bin/debug/ssleay32MDd.lib and /dev/null differ
-diff --git a/openssl/win32/bin/release/libeay32MD.dll b/openssl/win32/bin/release/libeay32MD.dll
-deleted file mode 100644
-index b8e0d3e..0000000
-Binary files a/openssl/win32/bin/release/libeay32MD.dll and /dev/null differ
-diff --git a/openssl/win32/bin/release/libeay32MD.lib b/openssl/win32/bin/release/libeay32MD.lib
-deleted file mode 100644
-index e1c96b2..0000000
-Binary files a/openssl/win32/bin/release/libeay32MD.lib and /dev/null differ
-diff --git a/openssl/win32/bin/release/ssleay32MD.dll b/openssl/win32/bin/release/ssleay32MD.dll
-deleted file mode 100644
-index a7ab09e..0000000
-Binary files a/openssl/win32/bin/release/ssleay32MD.dll and /dev/null differ
-diff --git a/openssl/win32/bin/release/ssleay32MD.lib b/openssl/win32/bin/release/ssleay32MD.lib
-deleted file mode 100644
-index f946338..0000000
-Binary files a/openssl/win32/bin/release/ssleay32MD.lib and /dev/null differ
-diff --git a/openssl/win64/bin/debug/libeay64MDd.dll b/openssl/win64/bin/debug/libeay64MDd.dll
-deleted file mode 100644
-index 207dc3e..0000000
-Binary files a/openssl/win64/bin/debug/libeay64MDd.dll and /dev/null differ
-diff --git a/openssl/win64/bin/debug/libeay64MDd.lib b/openssl/win64/bin/debug/libeay64MDd.lib
-deleted file mode 100644
-index f17ee08..0000000
-Binary files a/openssl/win64/bin/debug/libeay64MDd.lib and /dev/null differ
-diff --git a/openssl/win64/bin/debug/ssleay64MDd.dll b/openssl/win64/bin/debug/ssleay64MDd.dll
-deleted file mode 100644
-index 80e9a5a..0000000
-Binary files a/openssl/win64/bin/debug/ssleay64MDd.dll and /dev/null differ
-diff --git a/openssl/win64/bin/debug/ssleay64MDd.lib b/openssl/win64/bin/debug/ssleay64MDd.lib
-deleted file mode 100644
-index d9abc84..0000000
-Binary files a/openssl/win64/bin/debug/ssleay64MDd.lib and /dev/null differ
-diff --git a/openssl/win64/bin/release/libeay64MD.dll b/openssl/win64/bin/release/libeay64MD.dll
-deleted file mode 100644
-index 3053bb3..0000000
-Binary files a/openssl/win64/bin/release/libeay64MD.dll and /dev/null differ
-diff --git a/openssl/win64/bin/release/libeay64MD.lib b/openssl/win64/bin/release/libeay64MD.lib
-deleted file mode 100644
-index 7b1c47b..0000000
-Binary files a/openssl/win64/bin/release/libeay64MD.lib and /dev/null differ
-diff --git a/openssl/win64/bin/release/ssleay64MD.dll b/openssl/win64/bin/release/ssleay64MD.dll
-deleted file mode 100644
-index 9aceca8..0000000
-Binary files a/openssl/win64/bin/release/ssleay64MD.dll and /dev/null differ
-diff --git a/openssl/win64/bin/release/ssleay64MD.lib b/openssl/win64/bin/release/ssleay64MD.lib
-deleted file mode 100644
-index f08f4df..0000000
-Binary files a/openssl/win64/bin/release/ssleay64MD.lib and /dev/null differ
