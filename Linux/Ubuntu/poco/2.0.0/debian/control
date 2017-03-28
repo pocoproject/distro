@@ -6,14 +6,14 @@ Uploaders: 	Patrick Gansterer <paroga@paroga.com>,
 		Francis ANDRE <zosrothko@orange.fr>
 Build-Depends: debhelper (>= 9),
                dpkg-dev (>= 1.16.1~),
-	       libpq-dev,
+	       libpq-dev (>= 9.3),
                libexpat1-dev,
                libmysqlclient-dev,
-               libpcre3-dev (>= 7.8),
-               libsqlite3-dev (>= 3.6.13),
-               libssl-dev (>= 0.9.8),
+               libpcre3-dev (>= 8.40),
+               libsqlite3-dev (>= 3.16.2),
+               libssl-dev (>= 1.0.1),
                unixodbc-dev,
-               zlib1g-dev,
+               zlib1g-dev (>= 1.2.11),
                quilt
 Standards-Version: 3.9.2
 Section: libs
