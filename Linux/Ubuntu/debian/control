@@ -6,13 +6,14 @@ Uploaders: 	Patrick Gansterer <paroga@paroga.com>,
 		Francis ANDRE <zosrothko@orange.fr>
 Build-Depends: debhelper (>= 9),
                dpkg-dev (>= 1.16.1~),
+	       libpq-dev (>= 9.3),
                libexpat1-dev,
                libmysqlclient-dev,
-               libpcre3-dev (>= 7.8),
-               libsqlite3-dev (>= 3.6.13),
-               libssl-dev (>= 0.9.8),
+               libpcre3-dev (= 8.40),
+               libsqlite3-dev (>= 3.8),
+               libssl-dev (>= 1.0.1),
                unixodbc-dev,
-               zlib1g-dev,
+               zlib1g-dev (>= 1.2.11),
                quilt
 Standards-Version: 3.9.2
 Section: libs
@@ -24,55 +25,55 @@ Vcs-Git: git://git.debian.org/git/collab-maint/poco.git
 Package: libpoco-dev
 Section: libdevel
 Architecture: any
-Depends: libpococrypto-48.dbg (= ${binary:Version}),
-		 libpococrypto-48.rel (= ${binary:Version}),
-         libpocodata-48.dbg (= ${binary:Version}),
-		 libpocodata-48.rel (= ${binary:Version}),
-         libpocofoundation-48.dbg (= ${binary:Version}),
-		 libpocofoundation-48.rel (= ${binary:Version}),
-         libpocodatamysql-48.dbg (= ${binary:Version}),
-		 libpocodatamysql-48.rel (= ${binary:Version}),
-         libpoconet-48.dbg (= ${binary:Version}),
-		 libpoconet-48.rel (= ${binary:Version}), 
-         libpoconetssl-48.dbg (= ${binary:Version}),
-		 libpoconetssl-48.rel (= ${binary:Version}), 
-         libpocodataodbc-48.dbg (= ${binary:Version}),
-		 libpocodataodbc-48.rel (= ${binary:Version}), 
-         libpocodatasqlite-48.dbg (= ${binary:Version}),
-		 libpocodatasqlite-48.rel (= ${binary:Version}), 
-         libpocojson-48.dbg (= ${binary:Version}),
-		 libpocojson-48.rel (= ${binary:Version}), 
-         libpocoxml-48.dbg (= ${binary:Version}),
-		 libpocoxml-48.rel (= ${binary:Version}), 
-         libpocoutil-48.dbg (= ${binary:Version}),
-		 libpocoutil-48.rel (= ${binary:Version}), 
-         libpocozip-48.dbg (= ${binary:Version}),
-		 libpocozip-48.rel (= ${binary:Version}),
-         libpocomongodb-48.dbg (= ${binary:Version}),
-		 libpocomongodb-48.rel (= ${binary:Version}),
-         libpocopdf-48.dbg (= ${binary:Version}),
-		 libpocopdf-48.rel (= ${binary:Version}),
-         exepocopagecompiler-48.dbg (= ${binary:Version}),
-		 exepocopagecompiler-48.rel (= ${binary:Version}),
-		 exepocofile2page-48.rel (= ${binary:Version}),
-         exepocofile2page-48.dbg (= ${binary:Version}),
+Depends: libpococrypto-60.dbg (= ${binary:Version}),
+		 libpococrypto-60.rel (= ${binary:Version}),
+         libpocodata-60.dbg (= ${binary:Version}),
+		 libpocodata-60.rel (= ${binary:Version}),
+         libpocofoundation-60.dbg (= ${binary:Version}),
+		 libpocofoundation-60.rel (= ${binary:Version}),
+         libpocodatamysql-60.dbg (= ${binary:Version}),
+		 libpocodatamysql-60.rel (= ${binary:Version}),
+         libpoconet-60.dbg (= ${binary:Version}),
+		 libpoconet-60.rel (= ${binary:Version}), 
+         libpoconetssl-60.dbg (= ${binary:Version}),
+		 libpoconetssl-60.rel (= ${binary:Version}), 
+         libpocodataodbc-60.dbg (= ${binary:Version}),
+		 libpocodataodbc-60.rel (= ${binary:Version}), 
+         libpocodatasqlite-60.dbg (= ${binary:Version}),
+		 libpocodatasqlite-60.rel (= ${binary:Version}), 
+         libpocojson-60.dbg (= ${binary:Version}),
+		 libpocojson-60.rel (= ${binary:Version}), 
+         libpocoxml-60.dbg (= ${binary:Version}),
+		 libpocoxml-60.rel (= ${binary:Version}), 
+         libpocoutil-60.dbg (= ${binary:Version}),
+		 libpocoutil-60.rel (= ${binary:Version}), 
+         libpocozip-60.dbg (= ${binary:Version}),
+		 libpocozip-60.rel (= ${binary:Version}),
+         libpocomongodb-60.dbg (= ${binary:Version}),
+		 libpocomongodb-60.rel (= ${binary:Version}),
+         libpocopdf-60.dbg (= ${binary:Version}),
+		 libpocopdf-60.rel (= ${binary:Version}),
+         exepocopagecompiler-60.dbg (= ${binary:Version}),
+		 exepocopagecompiler-60.rel (= ${binary:Version}),
+		 exepocofile2page-60.rel (= ${binary:Version}),
+         exepocofile2page-60.dbg (= ${binary:Version}),
          ${misc:Depends} 
 Suggests: libpoco-doc, 
-		  libpococrypto-48.dbg (= ${binary:Version}), 
-		  libpocodata-48.dbg (= ${binary:Version}), 
-		  libpocofoundation-48.dbg (= ${binary:Version}), 
-		  libpocodatamysql-48.dbg (= ${binary:Version}), 
-		  libpoconet-48.dbg (= ${binary:Version}), 
-		  libpoconetssl-48.dbg (= ${binary:Version}), 
-		  libpocodataodbc-48.dbg (= ${binary:Version}), 
-		  libpocodatasqlite-48.dbg (= ${binary:Version}), 
-		  libpocoJSON-48.dbg (= ${binary:Version}), 
-		  libpocoxml-48.dbg (= ${binary:Version}), 
-		  libpocoutil-48.dbg (= ${binary:Version}), 
-		  libpocozip-48.dbg (= ${binary:Version})
-Provides: libpoco-48.dev
-Conflicts: libpoco-48.dev
-Replaces: libpoco-48.dev
+		  libpococrypto-60.dbg (= ${binary:Version}), 
+		  libpocodata-60.dbg (= ${binary:Version}), 
+		  libpocofoundation-60.dbg (= ${binary:Version}), 
+		  libpocodatamysql-60.dbg (= ${binary:Version}), 
+		  libpoconet-60.dbg (= ${binary:Version}), 
+		  libpoconetssl-60.dbg (= ${binary:Version}), 
+		  libpocodataodbc-60.dbg (= ${binary:Version}), 
+		  libpocodatasqlite-60.dbg (= ${binary:Version}), 
+		  libpocoJSON-60.dbg (= ${binary:Version}), 
+		  libpocoxml-60.dbg (= ${binary:Version}), 
+		  libpocoutil-60.dbg (= ${binary:Version}), 
+		  libpocozip-60.dbg (= ${binary:Version})
+Provides: libpoco-60.dev
+Conflicts: libpoco-60.dev
+Replaces: libpoco-60.dev
 Description: C++ Portable Components (POCO) Development files
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -90,11 +91,11 @@ Description: C++ Portable Components (POCO) Development files
  and Data, a library for uniformly accessing different SQL databases.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpococrypto-48.dbg
+Package: libpococrypto-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Crypto library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -109,9 +110,9 @@ Description: C++ Portable Components (POCO) Crypto library (debug version)
  This package provides the debug version of the POCO Crypto library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpococrypto-48.rel
+Package: libpococrypto-60.rel
 Architecture: any
-Depends: libpocofoundation-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Crypto library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -126,11 +127,11 @@ Description: C++ Portable Components (POCO) Crypto library
  This package provides the POCO Crypto library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocodata-48.dbg
+Package: libpocodata-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Data library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -145,9 +146,9 @@ Description: C++ Portable Components (POCO) Data library (debug version)
  This package provides the debug version of the POCO Data library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocodata-48.rel
+Package: libpocodata-60.rel
 Architecture: any
-Depends: libpocofoundation-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Data library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -162,11 +163,11 @@ Description: C++ Portable Components (POCO) Data library
  This package provides the POCO Data library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocodatamysql-48.dbg
+Package: libpocodatamysql-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation-48.dbg (= ${binary:Version}), libpocodata-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.dbg (= ${binary:Version}), libpocodata-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Data MySQL library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -181,9 +182,9 @@ Description: C++ Portable Components (POCO) Data MySQL library (debug version)
  This package provides the debug version of the POCO Data MySQL library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocodatamysql-48.rel
+Package: libpocodatamysql-60.rel
 Architecture: any
-Depends: libpocofoundation-48.rel (= ${binary:Version}), libpocodata-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.rel (= ${binary:Version}), libpocodata-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Data MySQL library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -198,11 +199,11 @@ Description: C++ Portable Components (POCO) Data MySQL library
  This package provides the POCO Data MySQL library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocodataodbc-48.dbg
+Package: libpocodataodbc-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation-48.dbg (= ${binary:Version}), libpocodata-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.dbg (= ${binary:Version}), libpocodata-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Data ODBC library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -217,9 +218,9 @@ Description: C++ Portable Components (POCO) Data ODBC library (debug version)
  This package provides the debug version of the POCO Data ODBC library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocodataodbc-48.rel
+Package: libpocodataodbc-60.rel
 Architecture: any
-Depends: libpocofoundation-48.rel (= ${binary:Version}), libpocodata-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.rel (= ${binary:Version}), libpocodata-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) ODBC library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -235,11 +236,11 @@ Description: C++ Portable Components (POCO) ODBC library
  against unixODBC but also iODBC can be used instead.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocodatasqlite-48.dbg
+Package: libpocodatasqlite-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation-48.dbg (= ${binary:Version}), libpocodata-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.dbg (= ${binary:Version}), libpocodata-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Data SQLite library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -254,9 +255,9 @@ Description: C++ Portable Components (POCO) Data SQLite library (debug version)
  This package provides the debug version of the POCO Data SQLite library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocodatasqlite-48.rel
+Package: libpocodatasqlite-60.rel
 Architecture: any
-Depends: libpocofoundation-48.rel (= ${binary:Version}), libpocodata-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.rel (= ${binary:Version}), libpocodata-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Data SQLite library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -271,7 +272,7 @@ Description: C++ Portable Components (POCO) Data SQLite library
  This package provides the POCO Data SQLite library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocofoundation-48.dbg
+Package: libpocofoundation-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
@@ -290,7 +291,7 @@ Description: C++ Portable Components (POCO) Foundation library (debug version)
  This package provides the debug version of POCO Foundation library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocofoundation-48.rel
+Package: libpocofoundation-60.rel
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Foundation library
@@ -307,11 +308,11 @@ Description: C++ Portable Components (POCO) Foundation library
  This package provides the POCO Foundation library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpoconet-48.dbg
+Package: libpoconet-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Network library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -326,9 +327,9 @@ Description: C++ Portable Components (POCO) Network library (debug version)
  This package provides the debug version of POCO Network library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpoconet-48.rel
+Package: libpoconet-60.rel
 Architecture: any
-Depends: libpocofoundation-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Network library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -343,11 +344,11 @@ Description: C++ Portable Components (POCO) Network library
  This package provides the POCO Net library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpoconetssl-48.dbg
+Package: libpoconetssl-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation-48.dbg (= ${binary:Version}), libpococrypto-48.dbg (= ${binary:Version}), libpoconet-48.dbg (= ${binary:Version}), libpocoutil-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.dbg (= ${binary:Version}), libpococrypto-60.dbg (= ${binary:Version}), libpoconet-60.dbg (= ${binary:Version}), libpocoutil-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Network library with SSL (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -362,9 +363,9 @@ Description: C++ Portable Components (POCO) Network library with SSL (debug vers
  This package provides the debug version of POCO Network SSL library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpoconetssl-48.rel
+Package: libpoconetssl-60.rel
 Architecture: any
-Depends: libpocofoundation-48.rel (= ${binary:Version}), libpococrypto-48.rel (= ${binary:Version}), libpoconet-48.rel (= ${binary:Version}), libpocoutil-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.rel (= ${binary:Version}), libpococrypto-60.rel (= ${binary:Version}), libpoconet-60.rel (= ${binary:Version}), libpocoutil-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Network library with SSL
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -379,11 +380,11 @@ Description: C++ Portable Components (POCO) Network library with SSL
  This package provides the POCO Network SSL library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocoutil-48.dbg
+Package: libpocoutil-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation-48.dbg (= ${binary:Version}), libpocojson-48.dbg (= ${binary:Version}), libpocoxml-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.dbg (= ${binary:Version}), libpocojson-60.dbg (= ${binary:Version}), libpocoxml-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Util library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -398,9 +399,9 @@ Description: C++ Portable Components (POCO) Util library (debug version)
  This package provides the debug version of POCO Util library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocoutil-48.rel
+Package: libpocoutil-60.rel
 Architecture: any
-Depends: libpocofoundation-48.rel (= ${binary:Version}), libpocojson-48.rel (= ${binary:Version}), libpocoxml-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.rel (= ${binary:Version}), libpocojson-60.rel (= ${binary:Version}), libpocoxml-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Util library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -415,11 +416,11 @@ Description: C++ Portable Components (POCO) Util library
  This package provides POCO Util library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocoxml-48.dbg
+Package: libpocoxml-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) XML library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -434,9 +435,9 @@ Description: C++ Portable Components (POCO) XML library (debug version)
  This package provides the debug version of POCO XML library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocoxml-48.rel
+Package: libpocoxml-60.rel
 Architecture: any
-Depends: libpocofoundation-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) XML library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -451,11 +452,11 @@ Description: C++ Portable Components (POCO) XML library
  This package provides the POCO XML library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocojson-48.dbg
+Package: libpocojson-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) XML library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -470,9 +471,9 @@ Description: C++ Portable Components (POCO) XML library (debug version)
  This package provides the debug version of POCO JSON library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocojson-48.rel
+Package: libpocojson-60.rel
 Architecture: any
-Depends: libpocofoundation-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) XML library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -487,11 +488,11 @@ Description: C++ Portable Components (POCO) XML library
  This package provides the POCO JSON library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocozip-48.dbg
+Package: libpocozip-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Zip library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -506,9 +507,9 @@ Description: C++ Portable Components (POCO) Zip library (debug version)
  This package provides the debug version of POCO Zip library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocozip-48.rel
+Package: libpocozip-60.rel
 Architecture: any
-Depends: libpocofoundation-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Zip library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -523,11 +524,11 @@ Description: C++ Portable Components (POCO) Zip library
  This package provides the POCO Zip library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocomongodb-48.dbg
+Package: libpocomongodb-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Zip library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -542,9 +543,9 @@ Description: C++ Portable Components (POCO) Zip library (debug version)
  This package provides the debug version of POCO MongoDB library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocomongodb-48.rel
+Package: libpocomongodb-60.rel
 Architecture: any
-Depends: libpocofoundation-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Zip library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -559,11 +560,11 @@ Description: C++ Portable Components (POCO) Zip library
  This package provides the POCO MongoDB library.
  
 #--------------------------------------------------------------------------------------------------
-Package: libpocopdf-48.dbg
+Package: libpocopdf-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocofoundation-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Zip library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -578,9 +579,9 @@ Description: C++ Portable Components (POCO) Zip library (debug version)
  This package provides the debug version of POCO PDF library.
 
 #--------------------------------------------------------------------------------------------------
-Package: libpocopdf-48.rel
+Package: libpocopdf-60.rel
 Architecture: any
-Depends: libpocofoundation-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocofoundation-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Zip library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -595,11 +596,11 @@ Description: C++ Portable Components (POCO) Zip library
  This package provides the POCO PDF library.
 
 #--------------------------------------------------------------------------------------------------
-Package: exepocopagecompiler-48.dbg
+Package: exepocopagecompiler-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpoconet-48.dbg (= ${binary:Version}), libpocoutil-48.dbg (= ${binary:Version}), libpocojson-48.dbg (= ${binary:Version}), libpocoxml-48.dbg (= ${binary:Version}), libpocofoundation-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpoconet-60.dbg (= ${binary:Version}), libpocoutil-60.dbg (= ${binary:Version}), libpocojson-60.dbg (= ${binary:Version}), libpocoxml-60.dbg (= ${binary:Version}), libpocofoundation-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Zip library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -614,9 +615,9 @@ Description: C++ Portable Components (POCO) Zip library (debug version)
  This package provides the debug version of POCO PageCompiler executable.
 
 #--------------------------------------------------------------------------------------------------
-Package: exepocopagecompiler-48.rel
+Package: exepocopagecompiler-60.rel
 Architecture: any
-Depends: libpoconet-48.rel (= ${binary:Version}), libpocoutil-48.rel (= ${binary:Version}), libpocojson-48.rel (= ${binary:Version}), libpocoxml-48.rel (= ${binary:Version}), libpocofoundation-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpoconet-60.rel (= ${binary:Version}), libpocoutil-60.rel (= ${binary:Version}), libpocojson-60.rel (= ${binary:Version}), libpocoxml-60.rel (= ${binary:Version}), libpocofoundation-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Zip library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -631,11 +632,11 @@ Description: C++ Portable Components (POCO) Zip library
  This package provides the POCO PageCompiler executable.
 
 #--------------------------------------------------------------------------------------------------
-Package: exepocofile2page-48.dbg
+Package: exepocofile2page-60.dbg
 Priority: extra
 Section: debug
 Architecture: any
-Depends: libpocoutil-48.dbg (= ${binary:Version}), libpocojson-48.dbg (= ${binary:Version}), libpocoxml-48.dbg (= ${binary:Version}), libpocofoundation-48.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocoutil-60.dbg (= ${binary:Version}), libpocojson-60.dbg (= ${binary:Version}), libpocoxml-60.dbg (= ${binary:Version}), libpocofoundation-60.dbg (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Zip library (debug version)
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
@@ -650,9 +651,9 @@ Description: C++ Portable Components (POCO) Zip library (debug version)
  This package provides the debug version of POCO PageCompiler executable.
 
 #--------------------------------------------------------------------------------------------------
-Package: exepocofile2page-48.rel
+Package: exepocofile2page-60.rel
 Architecture: any
-Depends: libpocoutil-48.rel (= ${binary:Version}), libpocojson-48.rel (= ${binary:Version}), libpocoxml-48.rel (= ${binary:Version}), libpocofoundation-48.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Depends: libpocoutil-60.rel (= ${binary:Version}), libpocojson-60.rel (= ${binary:Version}), libpocoxml-60.rel (= ${binary:Version}), libpocofoundation-60.rel (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
 Description: C++ Portable Components (POCO) Zip library
  The POCO C++ Libraries are a collection of open source C++ class libraries
  that simplify and accelerate the development of network-centric, portable
