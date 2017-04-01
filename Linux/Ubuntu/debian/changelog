@@ -1,0 +1,353 @@
+poco (1.6.1-11) experimental; urgency=low
+
+  * Fix control as version 31 for likbpoco-dev
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 08 Jan 2016 00:02:17 +0100
+
+poco (1.6.1-10) experimental; urgency=low
+
+  * Fix rel & dgb dependecies
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Thu, 07 Jan 2016 13:52:55 +0100
+
+poco (1.6.1-9) experimental; urgency=low
+
+  * Add MongoDB & PDF
+  * Add PageCompiler & File2Page
+  * Rename install files
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Thu, 07 Jan 2016 09:52:16 +0100
+
+poco (1.6.1-8) experimental; urgency=low
+
+  * Qualify by poco version: 1.6.1
+  * Build & install shared release and debug build
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Tue, 05 Jan 2016 23:43:40 +0100
+
+poco (1.6.1-7) experimental; urgency=low
+
+  * Fix ls -la ${HOME}
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-6) experimental; urgency=low
+
+  * change suffix from 40 to 31 to align with libversion libPoco*.so.31
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-5) experimental; urgency=low
+
+  * remove patches/no-strip-release-build
+  * add rules/override_auto_build and pass MAKEFLAGS=-s STRIP=
+  * add foundation-pathtest.patch  
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-4) experimental; urgency=low
+
+  * New Upstream version 1.6.1
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-3) experimental; urgency=low
+
+  * New Upstream version 1.6.1
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-3) experimental; urgency=low
+
+  * New Upstream version 1.6.1
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.6.1-1) experimental; urgency=low
+
+  * New Upstream version 1.6.1
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Fri, 01 Jan 2016 15:45:51 +0200
+
+poco (1.4.6p1-1) experimental; urgency=low
+
+  * New Upstream version 1.4.6p1
+  * debian/patches: refresh patches.
+  * debian/patches: reintroduce fix-odbc-makefile.patch,
+    it seems to be still needed.
+
+ -- Cristian Greco <cristian@debian.org>  Sun, 26 May 2013 15:45:51 +0200
+
+poco (1.4.6-1) experimental; urgency=low
+
+  [ Patrick Gansterer ]
+  * New Upstream Version
+  * debian/patches:
+    - fix-odbc-makefile.patch: drop patch, merged upstream
+
+  [ Cristian Greco ]
+  * patches/fix-odbc-makefile.patch: really drop the patch.
+
+ -- Cristian Greco <cristian@debian.org>  Sat, 11 May 2013 18:36:03 +0200
+
+poco (1.4.3p1-1) experimental; urgency=low
+
+  * New Upstream Version
+  * debian/changelog: fix debian-changelog-line-too-long.
+  * debian/control: bump up libraries SONAME.
+
+ -- Cristian Greco <cristian@debian.org>  Fri, 11 Mar 2012 16:57:34 +0100
+
+poco (1.4.2p1-10) experimental; urgency=low
+
+  * debian/patches:
+    - set forward url for some patches.
+    - fix-odbc-testsuite-armel.patch: drop patch, pretty useless (see next).
+    - honor-buildflags.patch: updated. Try to append (not prepend) flags where
+      possible, and also remove the -Ox flags set by upstream. This should fix
+      build failures on armel (second attempt).
+    - fix-mipsel-endianness.patch: new patch, correctly detect mipsel
+      architecture.
+
+ -- Cristian Greco <cristian@debian.org>  Thu, 12 Jan 2012 22:25:32 +0100
+
+poco (1.4.2p1-9) experimental; urgency=low
+
+  * fix-odbc-testsuite-armel.patch: new patch, disable building of
+    the Data/ODBC/SQLExecutor test object on armel.
+  * debian/testrunner.sh:
+    - copy additional test files from data/ dir, if any. This should fix
+      the SharedMemoryTest::testCreateFromFile test.
+    - also enable Zip library tests (which will now succeed thanks
+      to the previous change).
+
+ -- Cristian Greco <cristian@debian.org>  Mon, 09 Jan 2012 14:04:30 +0100
+
+poco (1.4.2p1-8) experimental; urgency=low
+
+  * debian/rules:
+    - disable parallel builds on armel and mipsel, this should hopefully
+      fix (test) build failures.
+    - also reset LDFLAGS when building tests.
+    - drop extra --no-fpenvironment option now that arm is gone.
+
+ -- Cristian Greco <cristian@debian.org>  Sat, 31 Dec 2011 19:23:32 +0100
+
+poco (1.4.2p1-7) experimental; urgency=low
+
+  * fix-kfreebsd-ftbfs.patch: fix the patch so that code now builds and *works*.
+
+ -- Cristian Greco <cristian@debian.org>  Sat, 31 Dec 2011 02:10:43 +0100
+
+poco (1.4.2p1-6) experimental; urgency=low
+
+  * debian/rules: build testsuite with hardening flags disabled (seems
+    to require a lot of memory).
+  * Revert "no-link-dl-rt.patch: drop patch, now unneeded."
+    Revert the patch because -ldl and -lrt are needed on FreeBSD.
+    This should really be handled by upstream in build/config/FreeBSD.
+
+ -- Cristian Greco <cristian@debian.org>  Fri, 23 Dec 2011 15:21:51 +0100
+
+poco (1.4.2p1-5) experimental; urgency=low
+
+  * debian/testrunner.sh:
+    - fix detection of libs directory.
+    - copy some more files needed by the Foundation testsuite.
+    - disable Net testsuite because there are some tests failing randomly.
+  * debian/rules: append --as-needed to LDFLAGS.
+  * debian/patches:
+    - honor-buildflags.patch: new patch, let the build system honor flags
+      obtained through dpkg-buildflags.
+    - no-link-dl-rt.patch: drop patch, now unneeded.
+
+ -- Cristian Greco <cristian@debian.org>  Fri, 23 Dec 2011 00:44:24 +0100
+
+poco (1.4.2p1-4) experimental; urgency=low
+
+  * debian/rules:
+    - enable selected tests using a testrunner.sh script.
+    - enable default hardening options from dpkg-buildflags.
+
+ -- Cristian Greco <cristian@debian.org>  Wed, 21 Dec 2011 17:02:18 +0100
+
+poco (1.4.2p1-3) experimental; urgency=low
+
+  * debian/patches:
+    - no-link-dl-rt.patch: updated to work also for kFreeBSD.
+    - fix-kfreebsd-ftbfs.patch: new patch, fix build failure on kFreeBSD.
+  * debian/control: expanded extended descriptions.
+  * Do not install empty NEWS file in libpoco.dev.
+
+ -- Cristian Greco <cristian@debian.org>  Wed, 09 Nov 2011 17:35:12 +0100
+
+poco (1.4.2p1-2) experimental; urgency=low
+
+  * debian/patches:
+    - 10_disable-rpath.patch: renamed to disable-rpath.patch, refreshed
+      and added information.
+    - no-debug-build.patch: do not build libraries in debug mode, either
+      shared or static.
+    - no-strip-release-build.patch: do not strip libraries built in release
+      mode by default, let dh_strip to the job instead.
+    - no-link-dl-rt.patch: link only Foundation library against dl/rt libs
+      on Linux.
+  * debian/rules:
+    - strip release libraries in their corrisponding -dbg packages and drop
+      lintian overrides.
+    - select the right configuration options for kfreebsd, trying to fix
+      the FTBFS.
+    - drop now useless command to remove hidden files.
+  * debian/control: adjust dependencies for -dbg packages.
+
+ -- Cristian Greco <cristian@debian.org>  Sun, 06 Nov 2011 13:27:26 +0100
+
+poco (1.4.2p1-1) experimental; urgency=low
+
+  [ Patrick Gansterer ]
+  * New Upstream Version (Closes: #612360)
+    - Upload to experimental.
+
+  [ Cristian Greco ]
+  * Convert package to source format 3.0 (quilt).
+  * Switch to debhelper compatibility level 8 and reduce debian/rules
+    in size. Also enable parallel build.
+  * fix-odbc-makefile.patch: new patch, use multiarch tuple when detecting
+    odbc library path. (Closes: #642733)
+  * debian/rules: don't build the testsuite as we are not running it anyway.
+  * debian/control:
+    - fix lintian warnings about short descriptions.
+    - add misc:Depends to libpoco-dev.
+    - add myself to Uploaders.
+  * debian/watch: track the .bz2 archive.
+
+ -- Cristian Greco <cristian@debian.org>  Wed, 20 Oct 2011 00:46:53 +0200
+
+poco (1.3.6p2-1) unstable; urgency=low
+
+  * New Upstream Version
+
+ -- Patrick Gansterer <paroga@paroga.com>  Sun, 24 Jan 2010 18:25:59 +0100
+
+poco (1.3.6p1-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Removed 20_unbundled.dpatch (merged into upstream)
+  * Removed 30_sh-support.dpatch (merged into upstream)
+
+ -- Patrick Gansterer <paroga@paroga.com>  Thu, 24 Dec 2009 11:13:32 +0100
+
+poco (1.3.6-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Corrected package dependencies (Closes: #545854)
+  * Removed 20_gcc44-missing-include.dpatch (merged into upstream)
+  * Now using upstream unbundled implementation (Closes: #560936)
+    + using r1294 from SVN poco 1.3.6 branch
+    + new patch: 20_unbundled.dpatch
+    + removed patch: 30_use-system-zlib.dpatch
+    + new build dependencies: libpcre3-dev, libsqlite3-dev
+  * Added 30_sh-support.dpatch to support sh4 (Closes: #548113)
+
+ -- Patrick Gansterer <paroga@paroga.com>  Thu, 17 Dec 2009 03:07:02 +0100
+
+poco (1.3.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * *-dbg packages moved to section debug.
+  * 30_crypto-testsuit-missing-libs.dpatch removed.
+  * POCO no longer use statically linked zlib:
+    + new patch: 30_use-system-zlib.dpatch
+    + new build dependency: zlib1g-dev
+  * Updated Standards-Version to 3.8.3, no changes needed.
+
+ -- Krzysztof Burghardt <krzysztof@burghardt.pl>  Sun, 30 Aug 2009 19:49:57 +0200
+
+poco (1.3.3p1-2) unstable; urgency=low
+
+  * Fixed FTBFS with GCC 4.4 due to missing #include (Closes: #505619)
+  * Renamed 20_gcc43-missing-include.dpatch to 20_gcc44-missing-include.dpatch
+  * Downgraded dependencies on -dbg packages (Closes: #504342)
+
+ -- Krzysztof Burghardt <krzysztof@burghardt.pl>  Sat, 15 Nov 2008 11:39:15 +0100
+
+poco (1.3.3p1-1) unstable; urgency=low
+
+  * New upstream release.
+  * 30_missing_paltforms.dpatch removed (merged into upstream).
+  * libpoco-dev provides, conflicts, replaces libpoco5-dev.
+
+ -- Krzysztof Burghardt <krzysztof@burghardt.pl>  Wed, 29 Oct 2008 18:45:34 +0100
+
+poco (1.3.2+dfsg1-3) unstable; urgency=low
+
+  * Add dpatch 30_missing_paltforms to debian/patches/00list (Closes: #487934)
+
+ -- Krzysztof Burghardt <krzysztof@burghardt.pl>  Thu, 26 Jun 2008 21:29:10 +0200
+
+poco (1.3.2+dfsg1-2) unstable; urgency=low
+
+  * Acknowledge NMU
+  * Add dpatch 30_missing_paltforms to support m68k and s390 (Closes: #487934)
+  * Suggests libpoco-doc instead of libpoco5-doc (Closes: #487394)
+  * Updated Standards-Version to 3.8.0, no changes needed (Closes: #487392)
+
+ -- Krzysztof Burghardt <krzysztof@burghardt.pl>  Wed, 25 Jun 2008 18:38:34 +0200
+
+poco (1.3.2+dfsg1-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * libpoco5-dev provides, conflicts, replaces libpoco-dev (Closes: #487353)
+
+ -- George Danchev <danchev@spnet.net>  Sat, 21 Jun 2008 10:05:06 +0000
+
+poco (1.3.2+dfsg1-1) unstable; urgency=low
+
+  * New upstream
+  * Acknowledge NMU
+  * Upstream tarball repacked to remove non DFSG-free pieces
+  * debian/changelog: Homepage: pseudo-header changed to regular field
+  * debian/control:
+     + Splited POCO into several small packages as all libraries
+       and their debug version are about 10MB.
+     + Updated Standards-Version: to 3.7.3 (no changes needed)
+  * debian/rules:
+     + Re-enabled test suite (--no-tests removed)
+     + Removed CFLAGS
+  * debian/watch: updated to track data branch
+  * debian/patches/10_disable-rpath.dpatch: updated for 1.3.2
+  * debian/patches/20_gcc43-missing-include.dpatch: replaces all other
+    gcc 4.3 patches
+
+ -- Krzysztof Burghardt <krzysztof@burghardt.pl>  Mon, 09 Jun 2008 00:28:50 +0200
+
+poco (1.2.9-2.1) unstable; urgency=low
+
+  * Non-maintainer upload to fix clamfs' FTBFS
+  * Added 40_gcc_4.3_missing_include.dpatch to add a missing header
+    in Foundation/include/Poco/FIFOStrategy.h (Closes: #455147)
+  * Moved Homepage from pseudo field to real field
+  * Added a watch file
+  * Updated Standards-Version to 3.7.3, no changes needed
+
+ -- Maximiliano Curia <maxy@gnuservers.com.ar>  Fri, 21 Mar 2008 19:29:38 -0300
+
+poco (1.3.0-1) experimental; urgency=low
+
+  * New upstream
+
+ -- Krzysztof Burghardt <krzysztof@burghardt.pl>  Thu, 10 May 2007 22:32:19 +0200
+
+poco (1.2.9-2) unstable; urgency=medium
+
+  * Add patch for GCC-4.3 (Closes: #421144)
+  * Fixed build problem on arm (missing configure option --no-fpenvironment)
+  * Fixed build problem on powerpc
+
+ -- Krzysztof Burghardt <krzysztof@burghardt.pl>  Fri, 27 Apr 2007 18:33:48 +0200
+
+poco (1.2.9-1) unstable; urgency=low
+
+  * Initial release (Closes: #406402)
+
+ -- Krzysztof Burghardt <krzysztof@burghardt.pl>  Mon, 12 Mar 2007 20:56:32 +0100
