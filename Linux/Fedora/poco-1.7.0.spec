@@ -1,8 +1,8 @@
-%global poco_src_version 1.6.1
-%global poco_doc_version 1.6.1
+%global poco_src_version 1.7.0
+%global poco_doc_version 1.7.0
 %global poco_rpm_release 1
 %global commit0 be692ed5abad364fb9be17a39974a20a07eebb17
-%global gittag0 poco-1.6.1-release
+%global gittag0 poco-1.7.0-release
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 # build without tests on s390 (runs out of memory during linking due the 2 GB address space)
@@ -24,7 +24,9 @@ URL:              http://www.pocoproject.org
 
 #Source0:          http://downloads.sourceforge.net/poco/poco-%{poco_src_version}-all.tar.bz2
 #Source1:          http://downloads.sourceforge.net/poco/poco-%{poco_doc_version}-all-doc.tar.gz
-Source0:           https://github.com/pocoproject/%{name}/archive/%{gittag0}.tar.gz#/%{name}-%{version}.tar.gz
+#Source0:           https://github.com/pocoproject/%{name}/archive/%{gittag0}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:           file://localhost/home/fandre/poco/releases/%{name}-%{version}-all.tar.gz
+Source1:           file://localhost/home/fandre/poco/releases/%{name}-%{version}-all-doc.tar.gz
 
 BuildRequires:    openssl-devel
 BuildRequires:    libiodbc-devel
@@ -34,7 +36,8 @@ BuildRequires:    pcre-devel
 BuildRequires:    sqlite-devel
 BuildRequires:    expat-devel
 BuildRequires:    mongodb-devel
-BuildRequires:    libtool
+BuildRequires:    libtool-ltdl-devel
+BuildRequires:    libtool-ltdl
 
 %description
 The POCO C++ Libraries (POCO stands for POrtable COmponents) 
@@ -44,12 +47,16 @@ POCO C++ Libraries are built strictly on standard ANSI/ISO C++,
 including the standard library.
 
 %prep
-%setup -qn %{name}-%{gittag0}
-#/bin/chmod -R a-x+X poco-%{poco_doc_version}-all-doc
+#%setup -qn %{name}-%{gittag0}
+#%setup -T -b 0 -qn %{name}-%{version}-all
+#%setup -T -b 1 -qn %{name}-%{version}-all-doc
+%setup -q -n %{name}-%{version}-all -a1
+/bin/chmod -R a-x+X %{name}-%{version}-all-doc
+
 /bin/sed -i.orig -e 's|$(INSTALLDIR)/lib\b|$(INSTALLDIR)/%{_lib}|g' Makefile
 /bin/sed -i.orig -e 's|ODBCLIBDIR /usr/lib\b|ODBCLIBDIR = %{_libdir}|g' Data/ODBC/Makefile Data/ODBC/testsuite/Makefile
 /bin/sed -i.orig -e 's|flags=""|flags="%{optflags}"|g' configure
-/bin/sed -i.orig -e 's|SHAREDOPT_LINK  = -Wl,-rpath,$(LIBPATH)|SHAREDOPT_LINK  =|g' build/config/Linux
+/bin/sed -i.orig -e 's|SHAREDOPT_LINK.*-Wl,-rpath,$(LIBPATH)|SHAREDOPT_LINK  =|g' build/config/Linux
 /bin/sed -i.orig -e 's|"Poco/zlib.h"|<zlib.h>|g' Zip/src/ZipStream.cpp
 /bin/sed -i.orig -e 's|PocoXML|PocoJSON PocoXML|g' Net/samples/dict/Makefile
 /bin/sed -i.orig -e 's|PocoXML|PocoJSON PocoXML|g' Net/samples/download/Makefile
@@ -66,14 +73,13 @@ including the standard library.
 %endif
 #./configure --prefix=%{_prefix} --omit=PDF,CppParser --unbundled %{?poco_tests} %{?poco_samples} --include-path=%{_includedir}/libiodbc --library-path=%{_libdir}/mysql
 ./configure --prefix=%{_prefix} --omit=PDF,CppParser %{?poco_tests} %{?poco_samples} --include-path=%{_includedir}/libiodbc --library-path=%{_libdir}/mysql
-make %{?_smp_mflags} STRIP=/bin/true
+make -s %{?_smp_mflags} STRIP=/bin/true
 
 %install
 make install LIBPREFIX=lib DESTDIR=%{buildroot}
 rm -f %{buildroot}%{_prefix}/include/Poco/Config.h.orig
 
 %package          foundation
-Requires:         pcre
 Summary:          The Foundation POCO component
 Group:            System Environment/Libraries
 %description foundation
@@ -146,7 +152,6 @@ C++ class libraries for network-centric applications.)
 %{_libdir}/libPocoCrypto.so.*
 
 %package          netssl
-Requires:         openssl
 Summary:          The NetSSL POCO component
 Group:            System Environment/Libraries
 %description netssl
@@ -171,7 +176,6 @@ C++ class libraries for network-centric applications.)
 %{_libdir}/libPocoData.so.*
 
 %package          sqlite
-Requires:         sqlite
 Summary:          The Data/SQLite POCO component
 Group:            System Environment/Libraries
 %description sqlite
@@ -196,7 +200,6 @@ of C++ class libraries for network-centric applications.)
 %{_libdir}/libPocoDataODBC.so.*
 
 %package          mysql
-Requires:         mysql
 Summary:          The Data/MySQL POCO component
 Group:            System Environment/Libraries
 %description mysql
@@ -209,7 +212,6 @@ of C++ class libraries for network-centric applications.)
 %{_libdir}/libPocoDataMySQL.so.*
 
 %package          mongodb
-Requires:         mongodb
 Summary:          The MongoDB POCO component
 Group:            System Environment/Libraries
 %description mongodb
@@ -221,6 +223,19 @@ class libraries for network-centric applications.)
 %files mongodb
 %defattr(-, root, root, -)
 %{_libdir}/libPocoMongoDB.so.*
+
+%package          redis
+Summary:          The Redis POCO component
+Group:            System Environment/Libraries
+%description redis
+This package contains the Redis component of POCO. (POCO is a set of C++ 
+class libraries for network-centric applications.)
+%post redis -p /sbin/ldconfig
+%postun redis -p /sbin/ldconfig
+
+%files redis
+%defattr(-, root, root, -)
+%{_libdir}/libPocoRedis.so.*
 
 %package          zip
 Summary:          The Zip POCO component
@@ -268,6 +283,7 @@ application testing purposes.
 %{_libdir}/libPocoDataMySQLd.so.*
 %{_libdir}/libPocoZipd.so.*
 %{_libdir}/libPocoMongoDBd.so.*
+%{_libdir}/libPocoRedisd.so.*
 %{_bindir}/cpspcd
 %{_bindir}/f2cpspd
 
@@ -288,6 +304,7 @@ Requires:         poco-sqlite = %{version}-%{release}
 Requires:         poco-odbc = %{version}-%{release}
 Requires:         poco-mysql = %{version}-%{release}
 Requires:         poco-mongodb = %{version}-%{release}
+Requires:         poco-redis = %{version}-%{release}
 Requires:         poco-zip = %{version}-%{release}
 Requires:         poco-pagecompiler = %{version}-%{release}
 
@@ -332,26 +349,28 @@ POCO applications.
 %{_libdir}/libPocoDataMySQLd.so
 %{_libdir}/libPocoMongoDB.so
 %{_libdir}/libPocoMongoDBd.so
+%{_libdir}/libPocoRedis.so
+%{_libdir}/libPocoRedisd.so
 %{_libdir}/libPocoZip.so
 %{_libdir}/libPocoZipd.so
 
-#%package          doc
-#Summary:          The POCO API reference documentation
-#Group:            Documentation
+%package          doc
+Summary:          The POCO API reference documentation
+Group:            Documentation
 
-#%description doc
-#The POCO C++ Libraries (POCO stands for POrtable COmponents) 
-#are open source C++ class libraries that simplify and accelerate the 
-#development of network-centric, portable applications in C++. The 
-#POCO C++ Libraries are built strictly on standard ANSI/ISO C++, 
-#including the standard library.
+%description doc
+The POCO C++ Libraries (POCO stands for POrtable COmponents) 
+are open source C++ class libraries that simplify and accelerate the 
+development of network-centric, portable applications in C++. The 
+POCO C++ Libraries are built strictly on standard ANSI/ISO C++, 
+including the standard library.
 
-#This is the complete POCO class library reference documentation in 
-#HTML format.
+This is the complete POCO class library reference documentation in 
+HTML format.
 
-#%files doc
-#%defattr(-, root, root, -)
-#%doc poco-%{poco_doc_version}-all-doc/*
+%files doc
+%defattr(-, root, root, -)
+%doc %{name}-%{version}-all-doc/*
 
 %changelog
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.2p1-2.10
