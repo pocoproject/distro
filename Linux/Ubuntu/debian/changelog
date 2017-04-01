@@ -1,3 +1,9 @@
+poco (1.6.1-12) experimental; urgency=low
+
+  * Switch from bzr to git
+
+ -- Francis ANDRE <zosrothko@orange.fr>  Sat, 01 Apr 2017 22:25:28 +0200
+
 poco (1.6.1-11) experimental; urgency=low
 
   * Fix control as version 31 for likbpoco-dev
