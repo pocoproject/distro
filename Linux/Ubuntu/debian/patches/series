@@ -3,7 +3,7 @@ honor-buildflags.patch
 no-link-dl-rt.patch  #could be removed now
 
 # patches for other makefiles
-#fix-odbc-makefile.patch
+fix-odbc-makefile.patch
 #poco-makefile.patch
 #pocodoc-makefile.patch
 #pocodoc-cfg.patch
