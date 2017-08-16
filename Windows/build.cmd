@@ -4,7 +4,7 @@ setlocal enabledelayedexpansion
 rem download Wix Toolset from https://wix.codeplex.com/releases/view/617257
 
 set PATH="C:\Program Files (x86)\WiX Toolset v3.10\bin";%PATH%
-set VIXTOOLSET="C:\Program Files (x86)\WiX Toolset v3.10"
+set VIXTOOLSET="C:\Program Files (x86)\WiX Toolset v3.11"
 
 rem Usage:
 rem ------
@@ -56,8 +56,8 @@ echo.
 echo.
 echo Building %VSYEAR%/Poco %POCO_VERSION% (x86).msi from %POCO_BASE%
 echo -------------------------------------------------------------------
-Candle.exe -arch x86 -dVSYEAR=%VSYEAR% -dVERSION=%POCO_VERSION% -dPOCO=%POCO_BASE% -dPlatform=x86 -out "%VSYEAR%/Poco %POCO_VERSION% (x86).wixobj" -ext %VIXTOOLSET%\bin\WixUIExtension.dll Poco-%POCO_VERSION%.wxs
-Light.exe  -out "%VSYEAR%/Poco %POCO_VERSION% (x86).msi" -cultures:null -ext %VIXTOOLSET%\bin\WixUIExtension.dll "%VSYEAR%/Poco %POCO_VERSION% (x86).wixobj" 
+%VIXTOOLSET%\bin\Candle.exe -arch x86 -dVSYEAR=%VSYEAR% -dVERSION=%POCO_VERSION% -dPOCO=%POCO_BASE% -dPlatform=x86 -out "%VSYEAR%/Poco %POCO_VERSION% (x86).wixobj" -ext %VIXTOOLSET%\bin\WixUIExtension.dll Poco-%POCO_VERSION%.wxs
+%VIXTOOLSET%\bin\Light.exe  -out "%VSYEAR%/Poco %POCO_VERSION% (x86).msi" -cultures:null -ext %VIXTOOLSET%\bin\WixUIExtension.dll "%VSYEAR%/Poco %POCO_VERSION% (x86).wixobj" 
 
 
 rem
@@ -67,8 +67,8 @@ echo.
 echo.
 echo Building %VSYEAR%/Poco %POCO_VERSION% (x64).msi from %POCO_BASE%
 echo -------------------------------------------------------------------
-Candle.exe  -arch x64 -dVSYEAR=%VSYEAR% -dVERSION=%POCO_VERSION% -dPOCO=%POCO_BASE% -dPlatform=x64 -out "%VSYEAR%/Poco %POCO_VERSION% (x64).wixobj" -ext %VIXTOOLSET%\bin\WixUIExtension.dll Poco-%POCO_VERSION%.wxs
-Light.exe   -out "%VSYEAR%/Poco %POCO_VERSION% (x64).msi" -cultures:null -ext %VIXTOOLSET%\bin\WixUIExtension.dll "%VSYEAR%/Poco %POCO_VERSION% (x64).wixobj"
+%VIXTOOLSET%\bin\Candle.exe  -arch x64 -dVSYEAR=%VSYEAR% -dVERSION=%POCO_VERSION% -dPOCO=%POCO_BASE% -dPlatform=x64 -out "%VSYEAR%/Poco %POCO_VERSION% (x64).wixobj" -ext %VIXTOOLSET%\bin\WixUIExtension.dll Poco-%POCO_VERSION%.wxs
+%VIXTOOLSET%\bin\Light.exe   -out "%VSYEAR%/Poco %POCO_VERSION% (x64).msi" -cultures:null -ext %VIXTOOLSET%\bin\WixUIExtension.dll "%VSYEAR%/Poco %POCO_VERSION% (x64).wixobj"
 
 goto :end
  
