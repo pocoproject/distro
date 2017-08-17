@@ -1,4 +1,8 @@
+# WiX
 *.wixobj
 *.wixpdb
 *.msi
 *.log
+
+# NuGet
+*.nupkg
