@@ -1466,6 +1466,7 @@
                                 <File Id="QUERY.H" Name="Query.h" Source="$(var.POCO)\JSON\include\Poco\JSON\Query.h" />
                                 <File Id="TEMPLATE.H" Name="Template.h" Source="$(var.POCO)\JSON\include\Poco\JSON\Template.h" />
                                 <File Id="TEMPLATECACHE.H" Name="TemplateCache.h" Source="$(var.POCO)\JSON\include\Poco\JSON\TemplateCache.h" />
+				<File Id="STRINGIFIER.H" Name="Stringifier.h" Source="$(var.POCO)\JSON\include\Poco\JSON\Stringifier.h" />
                             </Component>
                         </Directory>
                         <Directory Id="MONGODB" Name="MongoDB">
@@ -2287,6 +2288,7 @@
                         <File Id="POCO.JSON.STRINGIFIER.HTML" Name="Poco.JSON.Stringifier.html" Source="$(var.POCO)\releases\poco-$(var.VERSION)-all-doc\Poco.JSON.Stringifier.html" />
                         <File Id="POCO.JSON.TEMPLATE.HTML" Name="Poco.JSON.Template.html" Source="$(var.POCO)\releases\poco-$(var.VERSION)-all-doc\Poco.JSON.Template.html" />
                         <File Id="POCO.JSON.TEMPLATECACHE.HTML" Name="Poco.JSON.TemplateCache.html" Source="$(var.POCO)\releases\poco-$(var.VERSION)-all-doc\Poco.JSON.TemplateCache.html" />
+                        <File Id="POCO.JSON.STRINGIFIER.HTML" Name="Poco.JSON.Stringifier.html" Source="$(var.POCO)\releases\poco-$(var.VERSION)-all-doc\Poco.JSON.Stringifier.html" />
                     </Component>
                     <Component Win64="$(var.Win64)" Id="POCO.MONGODB.HTML" DiskId="1" Guid="5C2424E0-7FD7-4F01-8B80-08A8A4803917">
                         <File Id="POCO.MONGODB.ARRAY.HTML" Name="Poco.MongoDB.Array.html" Source="$(var.POCO)\releases\poco-$(var.VERSION)-all-doc\Poco.MongoDB.Array.html" />
