@@ -1,0 +1,76 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<package xmlns='http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd'>
+    <metadata>
+        <id>Pocoproject.Poco.vs140</id>
+        <version>1.7.8</version>
+        <title>Poco 1.7.8p3</title>
+        <authors> Applied Informatics &amp; Contributors</authors>
+        <owners>Günter Obiltschnig &amp; Aleksandar Fabijanic</owners>
+        <licenseUrl>https://pocoproject.org/license.html</licenseUrl>
+        <projectUrl>https://pocoproject.org/</projectUrl>
+        <iconUrl>https://avatars1.githubusercontent.com/u/201918?v=4&amp;s=200</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Modern, powerful open source C++ class libraries for building network- and internet-based applications that run on desktop, server, mobile and embedded systems.</description>
+        <releaseNotes>
+Release 1.7.8p3 (2017-06-22)
+============================
+
+- fixed GH #1760: Upgrade bundled expat to 2.2.1 which fixes some vulnerabilities:
+  http://seclists.org/oss-sec/2017/q2/499
+
+
+Release 1.7.8p2 (2017-04-18)
+============================
+
+- fixed GH #1655: CipherImpl memory leak with OpenSSL 1.1
+
+
+Release 1.7.8 (2017-02-21)
+==========================
+
+- fixed GH #1212: Lost WebSocket Frames after Client Websocket Handshake is complete
+- fixed GH #1260: URI encoding
+- fixed GH #1501: Alpine 3.4 trouble with Foundation/src/Error.cpp
+- fixed GH #1523: Long path names under Windows
+- fixed GH #1536: Building with OS X 10.12 SDK and 10.7 deployment target without libc++ fails
+- fixed GH #1537: Need to add multiple cflags parameters to configure
+- fixed GH #1539: Allow overriding POCO_TARGET_OSARCH for iPhoneSimulator
+- fixed GH #1546: Enable bitcode for iPhone build config
+- fixed GH #1549: Latin2Encoding and 0xFF
+- fixed GH #1551: Unable to use Poco on macOS 10.12
+- fixed GH #1552: IPv6 &amp; operator throws an exception when scope = 0
+- fixed GH #1566: Poco/Zip issue with some CM_DEFLATE archives
+- fixed GH #1567: Poco/ZIP issue with uncompressed archives
+- fixed GH #1570: IPv6AddressImpl::toString() returns wrong output for IPv6 address '::'
+- fixed GH #1571: ODBC Preparator memory leak
+- fixed GH #1573: Poco::File::createDirectories() should not throw Poco::FileExistsException
+- fixed GH #1580: Unable to unzip zip file created using non-seeking stream
+- fixed GH #1581: Cannot find 'pcre.h' when using POCO_UNBUNDLED, a non-system PCRE, and CMake
+- fixed GH #1588: Poco::Net::HTTPChunkedStreamBuf::readFromDevice(): restrict maximum 
+  size of chunk length 
+- fixed GH #1589: Poco::Net::HTMLForm: restrict maximum field and value length
+- fixed GH #1590: Poco::Net::DialogSocket: restrict maximum line length
+- fixed GH #1591: Poco::Net::MultipartReader: restrict maximum boundary string length
+- fixed GH #1597: adding empty file to zip leads to archive that can't be unzipped by windows
+- fixed GH #1599: readFromDevice() in AutoDetectStream.cpp in Poco Zip cannot detect signature
+- fixed GH #1534: Upgraded bundled zlib to 1.2.11
+- fixed GH #1558: Upgraded bundled SQLite to 3.16.2
+- fixed GH #1586: Upgraded bundled PCRE to 8.40
+- fixed GH #1538: Upgraded bundled double-conversion to 1.1.5
+- MongoDB: added support for authentication using 'MONGODB-CR' and 'SCRAM-SHA-1'
+  authentication schemes.
+- MongoDB: additional documentation and fixes for style and consistency and minor
+  API improvements (e.g., Poco::MongoDB::Binary)
+  Note: some flag enumeration values have been renamed for better consistency
+  and readability; existing code using these will have to be updated.
+</releaseNotes>
+        <copyright>Copyright 2017</copyright>
+        <tags>string filesystem thread date log event regex uri uuid cache native nativepackage sockets mime http ftp mail pop3 smtp html sax sax2 dom xml</tags>
+   </metadata>
+    <files>
+        <file src='..\bin\*.pdb' 							target='build\native\bin'  	exclude='..\bin\PocoCppParser*'/>
+        <file src='..\bin\*.dll' 							target='build\native\bin'  	exclude='..\bin\PocoCppParser*/>
+        <file src='..\bin64\*.pdb' 							target='build\native\bin64'	exclude='..\bin64\PocoCppParser*'/>
+        <file src='..\bin64\*.dll' 							target='build\native\bin64'	exclude='..\bin64\PocoCppParser*'/>
+     </files>
+</package>
